@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kulitan Kapampangan - Katutubong Pagbasa at Pagsasanay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Naka-embed na Base64 Audio para sa 100% Garantisadong Offline Playback -->
+  <script src="DatasetsKulitan/audio_base64.js"></script>
+  <style>
+    :root {
+      --bg: #070a12;
+      --card-bg: rgba(15, 23, 42, 0.85);
+      --card-border: rgba(255, 255, 255, 0.09);
+      --card-hover: rgba(30, 41, 67, 0.95);
+      --primary: #f59e0b;
+      --primary-glow: rgba(245, 158, 11, 0.45);
+      --accent: #06b6d4;
+      --accent-glow: rgba(6, 182, 212, 0.4);
+      --slang: #a855f7;
+      --slang-glow: rgba(168, 85, 247, 0.4);
+      --repeat: #10b981;
+      --repeat-glow: rgba(16, 185, 129, 0.4);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Outfit", sans-serif;
+      min-height: 100vh;
+      padding: 1.5rem 1rem 5rem;
+      background-image: radial-gradient(circle at 10% 15%, rgba(245, 158, 11, 0.1) 0%, transparent 45%),
+                        radial-gradient(circle at 90% 85%, rgba(6, 182, 212, 0.1) 0%, transparent 45%);
+    }
+    .container { max-width: 1440px; margin: 0 auto; }
+    
+    /* Ulo ng Pahina (Header) */
+    header { text-align: center; margin-bottom: 2rem; }
+    .badge-sub {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #fbbf24;
+      padding: 0.35rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 25%, #cbd5e1 65%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    .description {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 860px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.55;
+    }
+
+    /* Pagsasanay sa Patinig (A-E-I-O-U Special Deck) */
+    .vowel-deck {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 158, 11, 0.15);
+    }
+    .vowel-deck-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .vowel-header-text h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .vowel-header-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+    .btn-play-all {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #000;
+      border: none;
+      padding: 0.65rem 1.35rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 15px var(--primary-glow);
+      transition: all 0.2s;
+    }
+    .btn-play-all:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+    .vowel-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 850px) {
+      .vowel-grid { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+    }
+    .vowel-pill-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 0.95rem;
+      padding: 1rem 0.75rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .vowel-pill-card:hover {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--primary-glow);
+    }
+    .vowel-pill-card.active-vowel {
+      background: rgba(245, 158, 11, 0.25);
+      border-color: var(--primary);
+      box-shadow: 0 0 20px var(--primary-glow);
+    }
+    .vowel-glyph-img {
+      background: #ffffff;
+      border-radius: 0.5rem;
+      padding: 0.4rem;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .vowel-glyph-img img {
+      max-height: 40px;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .vowel-letter {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .vowel-sound-cue {
+      font-size: 0.72rem;
+      color: #38bdf8;
+      font-family: monospace;
+      font-weight: 700;
+    }
+    .vowel-mouth-shape {
+      font-size: 0.73rem;
+      color: #cbd5e1;
+      line-height: 1.3;
+    }
+    .vowel-sample-word {
+      font-size: 0.7rem;
+      color: #fbbf24;
+      font-weight: 600;
+    }
+
+    /* Pagsusuri sa Speaker at Lakas ng Tunog */
+    .speaker-check-banner {
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.15), rgba(6, 182, 212, 0.15));
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 1rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .speaker-check-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .speaker-icon {
+      font-size: 1.5rem;
+      background: rgba(245, 158, 11, 0.2);
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .speaker-check-text h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .speaker-check-text p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .speaker-check-actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .btn-test-sound {
+      background: var(--primary);
+      color: #000;
+      border: none;
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+    .btn-test-sound:hover {
+      box-shadow: 0 0 15px var(--primary-glow);
+      transform: translateY(-1px);
+    }
+
+    /* Pagpili sa Lakas ng Tunog (Volume) */
+    .vol-selector {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+    }
+    .vol-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-right: 0.3rem;
+      font-weight: 600;
+    }
+    .vol-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .vol-btn.active {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 8px var(--accent-glow);
+    }
+
+    /* Daluy ng Tunog (Visualizer & Deck) */
+    .visualizer-deck {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--card-border);
+      border-radius: 1.25rem;
+      padding: 1.25rem 1.75rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .visualizer-deck { grid-template-columns: 1fr; }
+    }
+    .viz-canvas-wrap {
+      position: relative;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 0.85rem;
+      padding: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .viz-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      font-family: monospace;
+    }
+    canvas#visualizerCanvas {
+      width: 100%;
+      height: 75px;
+      display: block;
+      border-radius: 0.5rem;
+    }
+    .deck-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .deck-title {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+    .accent-switcher-pills {
+      display: flex;
+      gap: 0.4rem;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.35rem;
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+    }
+    .accent-btn {
+      flex: 1;
+      padding: 0.45rem 0.6rem;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .accent-btn.active.mode-native {
+      background: var(--primary);
+      color: #000;
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+    .accent-btn.active.mode-fil {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+    .accent-btn.active.mode-slang {
+      background: var(--slang);
+      color: #fff;
+      box-shadow: 0 0 12px var(--slang-glow);
+    }
+
+    /* Pagsala at Paghahanap (Controls & Filters) */
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .search-box {
+      flex: 1;
+      min-width: 280px;
+      max-width: 480px;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      padding: 0.75rem 1.25rem 0.75rem 2.75rem;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+    .category-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .pill-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pill-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    .pill-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #000;
+      font-weight: 700;
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+
+    /* Grid ng mga Kard */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.35rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 1.15rem;
+      padding: 1.25rem;
+      position: relative;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      background: var(--card-hover);
+      border-color: rgba(245, 158, 11, 0.45);
+      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+    }
+    .card.playing-native {
+      border-color: var(--primary);
+      box-shadow: 0 0 25px var(--primary-glow);
+    }
+    .card.playing-repeat {
+      border-color: var(--repeat);
+      box-shadow: 0 0 25px var(--repeat-glow);
+    }
+    .card.playing-slang {
+      border-color: var(--slang);
+      box-shadow: 0 0 25px var(--slang-glow);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }
+    .card-id {
+      font-family: "Space Grotesk", monospace;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .card-badge {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 0.4rem;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+      font-family: monospace;
+    }
+    .card-badge.high-pitch {
+      background: rgba(236, 72, 153, 0.18);
+      color: #f472b6;
+      border: 1px solid rgba(236, 72, 153, 0.35);
+      font-weight: 700;
+    }
+    .image-preview {
+      background: #ffffff;
+      border-radius: 0.65rem;
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 85px;
+      margin-bottom: 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .image-preview img {
+      max-height: 60px;
+      max-width: 100%;
+      object-fit: contain;
+      filter: contrast(110%);
+    }
+    .card-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-bottom: 0.85rem;
+    }
+    .info-group {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.5rem 0.7rem;
+      border-radius: 0.5rem;
+    }
+    .info-label {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.15rem;
+    }
+    .info-val {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .info-val.ipa {
+      color: #38bdf8;
+      font-family: monospace;
+    }
+
+    /* Kahon ng Gabay sa Pagbigkas */
+    .guide-box {
+      background: rgba(245, 158, 11, 0.06);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: 0.5rem;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.76rem;
+      color: #f1f5f9;
+      line-height: 1.45;
+      margin-bottom: 0.95rem;
+    }
+    .guide-box strong {
+      color: #fbbf24;
+    }
+
+    /* Mga Pindutan sa Ilalim ng Kard */
+    .card-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .speed-toggle-group {
+      display: flex;
+      gap: 0.4rem;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.2rem;
+      border-radius: 0.4rem;
+    }
+    .speed-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.3rem 0;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .speed-btn.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-weight: 700;
+    }
+    .audio-actions {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr 0.8fr;
+      gap: 0.4rem;
+    }
+    .action-btn {
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.55rem 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-native {
+      background: var(--primary);
+      color: #000;
+    }
+    .btn-native:hover {
+      box-shadow: 0 0 12px var(--primary-glow);
+      filter: brightness(1.1);
+    }
+    .btn-repeat {
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+    }
+    .btn-repeat:hover {
+      background: var(--repeat);
+      color: #000;
+      box-shadow: 0 0 12px var(--repeat-glow);
+    }
+    .btn-slang {
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      color: #c084fc;
+    }
+    .btn-slang:hover {
+      background: var(--slang);
+      color: #fff;
+      box-shadow: 0 0 12px var(--slang-glow);
+    }
+
+    /* Animasyon ng Tunog */
+    .wave-anim {
+      display: none;
+      gap: 2px;
+      align-items: flex-end;
+      height: 12px;
+    }
+    .wave-bar {
+      width: 2px;
+      height: 100%;
+      background: currentColor;
+      border-radius: 1px;
+      animation: wave 0.6s infinite ease-in-out alternate;
+    }
+    .wave-bar:nth-child(2) { animation-delay: 0.2s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes wave {
+      0% { height: 20%; }
+      100% { height: 100%; }
+    }
+    .card.playing-native .btn-native .wave-anim,
+    .card.playing-repeat .btn-repeat .wave-anim,
+    .card.playing-slang .btn-slang .wave-anim {
+      display: flex;
+    }
+    .card.playing-native .btn-native .play-icon,
+    .card.playing-repeat .btn-repeat .play-icon,
+    .card.playing-slang .btn-slang .play-icon {
+      display: none;
+    }
+
+    /* Lumulutang na Banner ng Kasalukuyang Tumutugtog */
+    .now-playing-banner {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--primary);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--primary-glow);
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      display: none;
+      align-items: center;
+      gap: 1rem;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-sub">Ámanung Sísuan • Katutubong Bigkas Kulitan</div>
+      <h1>Gabay sa Wastong Pagbigkas ng Kulitan Kapampangan</h1>
+      <p class="description">
+        Tunay na bigkas Kapampangan na may tamang diin at haba (<strong style="color:#fbbf24;">acute ˥</strong>), malinis na mga patinig ([a], [e], [i], [o], [u]), at buong tunog sa ngalangala tulad ng [-ŋ] at [-ŋk]. Pakinggan ang katutubong audio, magsanay sa pamamagitan ng 3 ulit na pagsunod sa tunog, o ikumpara sa karaniwang bigkas.
+      </p>
+    </header>
+
+    <!-- Modyul sa Pagsasanay sa Patinig (A - E - I - O - U) -->
+    <div class="vowel-deck">
+      <div class="vowel-deck-top">
+        <div class="vowel-header-text">
+          <h3>📖 Pagsasanay sa Pagbasa ng Patinig (A • E • I • O • U)</h3>
+          <p>Unang hakbang sa pagbasa tulad sa aralin sa alpabeto: "Ahhh, Ehhh, Ihhh, Ohhh, Uhhh". Sanayin ang hugis ng bibig at tunog bago dumako sa mga pantig.</p>
+        </div>
+        <button class="btn-play-all" id="btnPlayAllVowels">
+          <span>▶ Sunod-sunod na Basahin (A ➔ E ➔ I ➔ O ➔ U)</span>
+        </button>
+      </div>
+
+      <div class="vowel-grid">
+        <div class="vowel-pill-card" data-vowel="A">
+          <div class="vowel-glyph-img"><img src="DatasetsKulitan/A.jpg" alt="A"></div>
+          <div class="vowel-letter">A a</div>
+          <div class="vowel-sound-cue">Tunog: [a] ("Ahhh")</div>
+          <div class="vowel-mouth-shape">Bukas at maluwang ang bibig</div>
+          <div class="vowel-sample-word">hal. 'ama' / 'aso'</div>
+        </div>
+
+        <div class="vowel-pill-card" data-vowel="E">
+          <div class="vowel-glyph-img"><img src="DatasetsKulitan/E.jpg" alt="E"></div>
+          <div class="vowel-letter">E e</div>
+          <div class="vowel-sound-cue">Tunog: [e] ("Ehhh")</div>
+          <div class="vowel-mouth-shape">Bahagyang nakangiti, purong 'e'</div>
+          <div class="vowel-sample-word">hal. 'ebon' / 'eroplano'</div>
+        </div>
+
+        <div class="vowel-pill-card" data-vowel="I">
+          <div class="vowel-glyph-img"><img src="DatasetsKulitan/I.jpg" alt="I"></div>
+          <div class="vowel-letter">I i</div>
+          <div class="vowel-sound-cue">Tunog: [i] ("Ihhh")</div>
+          <div class="vowel-mouth-shape">Nakangiti, magkalapit ang ngipin</div>
+          <div class="vowel-sample-word">hal. 'ilug' / 'ilong'</div>
+        </div>
+
+        <div class="vowel-pill-card" data-vowel="O">
+          <div class="vowel-glyph-img"><img src="DatasetsKulitan/O.jpg" alt="O"></div>
+          <div class="vowel-letter">O o</div>
+          <div class="vowel-sound-cue">Tunog: [o] ("Ohhh")</div>
+          <div class="vowel-mouth-shape">Naka-pabilog ang mga labi</div>
+          <div class="vowel-sample-word">hal. 'ortelano' / 'oso'</div>
+        </div>
+
+        <div class="vowel-pill-card" data-vowel="U">
+          <div class="vowel-glyph-img"><img src="DatasetsKulitan/U.jpg" alt="U"></div>
+          <div class="vowel-letter">U u</div>
+          <div class="vowel-sound-cue">Tunog: [u] ("Uhhh")</div>
+          <div class="vowel-mouth-shape">Nakasuso, bilog na bilog ang labi</div>
+          <div class="vowel-sample-word">hal. 'uran' / 'ulan'</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subukan ang Speaker Banner -->
+    <div class="speaker-check-banner">
+      <div class="speaker-check-info">
+        <div class="speaker-icon">🔊</div>
+        <div class="speaker-check-text">
+          <h4>Subukan ang Speaker at Lakas ng Tunog</h4>
+          <p>Pindutin ang "Subukan ang Tunog" upang matiyak na maririnig nang malinaw ang mahabang diin tulad ng "Bí" at "Bú".</p>
+        </div>
+      </div>
+      <div class="speaker-check-actions">
+        <div class="vol-selector">
+          <span class="vol-label">Lakas:</span>
+          <button class="vol-btn active" data-gain="1.0">100% Karaniwan</button>
+          <button class="vol-btn" data-gain="1.5">150% Malakas 📢</button>
+          <button class="vol-btn" data-gain="2.0">200% Sagad ⚡</button>
+        </div>
+        <button class="btn-test-sound" id="btnTestSound">
+          <span>▶ Subukan ang Tunog ("Bí")</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Visualizer & Master Deck -->
+    <div class="visualizer-deck">
+      <div class="viz-canvas-wrap">
+        <div class="viz-header">
+          <span>DALUY NG TUNOG AT FREQUENCY (SPECTRUM)</span>
+          <span id="vizStatus">NAKAHANDA / WALANG TUMUTUNOG</span>
+        </div>
+        <canvas id="visualizerCanvas" width="600" height="75"></canvas>
+      </div>
+
+      <div class="deck-controls">
+        <div class="deck-title">Pangunahing Paraan sa Pagpindot ng Kard:</div>
+        <div class="accent-switcher-pills">
+          <button class="accent-btn active mode-native" data-mode="native">🇵🇭 Katutubong Audio (MP3)</button>
+          <button class="accent-btn mode-fil" data-mode="fil">Pagsasalita (Tagalog TTS)</button>
+          <button class="accent-btn mode-slang" data-mode="slang">🇺🇸 Ihambing sa Slang</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagsala at Paghahanap -->
+    <div class="controls-bar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Maghanap ng titik o pantig (hal. BU_U, BANG, KANK, [baŋ])...">
+      </div>
+
+      <div class="category-pills">
+        <button class="pill-btn active" data-cat="all">Araling Sunod-sunod (93)</button>
+        <button class="pill-btn" data-cat="vowel">Mga Patinig / Pabatu (5)</button>
+        <button class="pill-btn" data-cat="base">Mga Payak na Pantig (55)</button>
+        <button class="pill-btn" data-cat="accented">Mga May Diin at Mahaba (22)</button>
+        <button class="pill-btn" data-cat="coda">Mga may Dulong -NG / -NK (11)</button>
+      </div>
+    </div>
+
+    <div class="cards-grid" id="cardsGrid"></div>
+  </div>
+
+  <div class="now-playing-banner" id="nowPlaying">
+    <div class="wave-anim" style="display:flex;">
+      <div class="wave-bar"></div>
+      <div class="wave-bar"></div>
+      <div class="wave-bar"></div>
+    </div>
+    <span id="nowPlayingText">Pinatutugtog...</span>
+  </div>
+
+  <script>
+    const KULITAN_DATA = [
+  {
+    "id": "A",
+    "label": "a",
+    "tts_speak": "A",
+    "phonetic_ipa": "a",
+    "pronunciation_guide": "Bukas at malinaw na patinig na [a] tulad sa 'ama' o 'asul'; hindi paimpit o parang sa Ingles na 'apple'.",
+    "image_path": "DatasetsKulitan/A.jpg",
+    "audio_file": "kulitan_a.mp3"
+  },
+  {
+    "id": "BA",
+    "label": "ba",
+    "tts_speak": "Ba",
+    "phonetic_ipa": "ba",
+    "pronunciation_guide": "Matalas at maikling pantig na [ba] tulad sa salitang 'bale' (bahay); hindi binubugahan ng hangin.",
+    "image_path": "DatasetsKulitan/BA.jpg",
+    "audio_file": "kulitan_ba.mp3"
+  },
+  {
+    "id": "BANG",
+    "label": "bang",
+    "tts_speak": "Bang",
+    "phonetic_ipa": "baŋ",
+    "pronunciation_guide": "Pantig na nagtatapos sa tunog-ilong na [baŋ] tulad sa 'bangka'; buo ang ugong ng 'ng' sa dulo.",
+    "image_path": "DatasetsKulitan/BANG.png",
+    "audio_file": "kulitan_bang.mp3"
+  },
+  {
+    "id": "BE",
+    "label": "be",
+    "tts_speak": "Be",
+    "phonetic_ipa": "be",
+    "pronunciation_guide": "Malinis na gitnang patinig na [be] tulad sa 'bengit'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/BE.png",
+    "audio_file": "kulitan_be.mp3"
+  },
+  {
+    "id": "BI",
+    "label": "bi",
+    "tts_speak": "Bi",
+    "phonetic_ipa": "bi",
+    "pronunciation_guide": "Maikling pantay na patinig na [bi] tulad sa 'bilang'; payak na bigkas.",
+    "image_path": "DatasetsKulitan/BI.jpg",
+    "audio_file": "kulitan_bi.mp3"
+  },
+  {
+    "id": "BI_I",
+    "label": "bí/ì",
+    "tts_speak": "Bí",
+    "phonetic_ipa": "biːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('bi' patungong 'biiiiii' [biːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'bi'. Halimbawa sa Kapampangan: 'bíik (biik)'.",
+    "image_path": "DatasetsKulitan/BI_I.png",
+    "audio_file": "kulitan_bi_i.mp3"
+  },
+  {
+    "id": "BO",
+    "label": "bo",
+    "tts_speak": "Bó",
+    "phonetic_ipa": "bo",
+    "pronunciation_guide": "Purong bilog na patinig na [bo] tulad sa 'boti'; walang diptonggong dulas.",
+    "image_path": "DatasetsKulitan/BO.png",
+    "audio_file": "kulitan_bo.mp3"
+  },
+  {
+    "id": "BU",
+    "label": "bu",
+    "tts_speak": "Bu",
+    "phonetic_ipa": "bu",
+    "pronunciation_guide": "Maikli at bilog na patinig na [bu] tulad sa 'bukas'; payak at walang diin.",
+    "image_path": "DatasetsKulitan/BU.jpg",
+    "audio_file": "kulitan_bu.mp3"
+  },
+  {
+    "id": "BU_U",
+    "label": "bú/ù",
+    "tts_speak": "Bú",
+    "phonetic_ipa": "buːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('bu' patungong 'buuuuuu' [buːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'bu'. Halimbawa sa Kapampangan: 'búlug (toro)'.",
+    "image_path": "DatasetsKulitan/BU_U.png",
+    "audio_file": "kulitan_bu_u.mp3"
+  },
+  {
+    "id": "DA",
+    "label": "da",
+    "tts_speak": "Da",
+    "phonetic_ipa": "da",
+    "pronunciation_guide": "Matalas na pantig na [da] tulad sa 'dalan' (daan); nakalapat ang dila sa likod ng ngipin.",
+    "image_path": "DatasetsKulitan/DA.jpg",
+    "audio_file": "kulitan_da.mp3"
+  },
+  {
+    "id": "DANG",
+    "label": "dang",
+    "tts_speak": "Dang",
+    "phonetic_ipa": "daŋ",
+    "pronunciation_guide": "Pantig na nagtatapos sa tunog-ilong na [daŋ] tulad sa 'dangkal'; malinaw ang dulong 'ng'.",
+    "image_path": "DatasetsKulitan/DANG.png",
+    "audio_file": "kulitan_dang.mp3"
+  },
+  {
+    "id": "DE",
+    "label": "de",
+    "tts_speak": "De",
+    "phonetic_ipa": "de",
+    "pronunciation_guide": "Malinis na gitnang patinig na [de] tulad sa 'delikadu'; maikling tunog.",
+    "image_path": "DatasetsKulitan/DE.png",
+    "audio_file": "kulitan_de.mp3"
+  },
+  {
+    "id": "DI",
+    "label": "di",
+    "tts_speak": "Di",
+    "phonetic_ipa": "di",
+    "pronunciation_guide": "Maikling patinig na [di] tulad sa 'dila'; payak at walang diin.",
+    "image_path": "DatasetsKulitan/DI.jpg",
+    "audio_file": "kulitan_di.mp3"
+  },
+  {
+    "id": "DI_I",
+    "label": "dí/ì",
+    "tts_speak": "Dí",
+    "phonetic_ipa": "diːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('di' patungong 'diiiiii' [diːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'di'. Halimbawa sa Kapampangan: 'díla (dila)'.",
+    "image_path": "DatasetsKulitan/DI_I.png",
+    "audio_file": "kulitan_di_i.mp3"
+  },
+  {
+    "id": "DO",
+    "label": "do",
+    "tts_speak": "Dó",
+    "phonetic_ipa": "do",
+    "pronunciation_guide": "Purong bilog na patinig na [do] tulad sa 'do'; hindi nagiging 'dou'.",
+    "image_path": "DatasetsKulitan/DO.png",
+    "audio_file": "kulitan_do.mp3"
+  },
+  {
+    "id": "DU",
+    "label": "du",
+    "tts_speak": "Du",
+    "phonetic_ipa": "du",
+    "pronunciation_guide": "Maikli at saradong patinig na [du] tulad sa 'durut' (ikot); payak na bigkas.",
+    "image_path": "DatasetsKulitan/DU.jpg",
+    "audio_file": "kulitan_du.mp3"
+  },
+  {
+    "id": "DU_U",
+    "label": "dú/ù",
+    "tts_speak": "Dú",
+    "phonetic_ipa": "duːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('du' patungong 'duuuuuu' [duːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'du'. Halimbawa sa Kapampangan: 'dúkut (dukot)'.",
+    "image_path": "DatasetsKulitan/DU_U.png",
+    "audio_file": "kulitan_du_u.mp3"
+  },
+  {
+    "id": "E",
+    "label": "e",
+    "tts_speak": "E",
+    "phonetic_ipa": "e",
+    "pronunciation_guide": "Matalas at malinis na patinig na [e] tulad sa 'ebon' (ibon/itlog); hindi nagiging tunog 'i'.",
+    "image_path": "DatasetsKulitan/E.png",
+    "audio_file": "kulitan_e.mp3"
+  },
+  {
+    "id": "GA",
+    "label": "ga",
+    "tts_speak": "Ga",
+    "phonetic_ipa": "ga",
+    "pronunciation_guide": "Madiing tunog sa lalamunan na [ga] tulad sa 'gale' (galaw); walang buga ng hangin.",
+    "image_path": "DatasetsKulitan/GA.jpg",
+    "audio_file": "kulitan_ga.mp3"
+  },
+  {
+    "id": "GANG",
+    "label": "gang",
+    "tts_speak": "Gang",
+    "phonetic_ipa": "gaŋ",
+    "pronunciation_guide": "Pantig na nagtatapos sa tunog-ilong na [gaŋ] tulad sa 'gangsa'; malalim ang ugong sa lalamunan.",
+    "image_path": "DatasetsKulitan/GANG.png",
+    "audio_file": "kulitan_gang.mp3"
+  },
+  {
+    "id": "GE",
+    "label": "ge",
+    "tts_speak": "Ge",
+    "phonetic_ipa": "ge",
+    "pronunciation_guide": "Malinis na gitnang patinig na [ge] tulad sa 'geleran'; purong 'e'.",
+    "image_path": "DatasetsKulitan/GE.png",
+    "audio_file": "kulitan_ge.mp3"
+  },
+  {
+    "id": "GI",
+    "label": "gi",
+    "tts_speak": "Gi",
+    "phonetic_ipa": "gi",
+    "pronunciation_guide": "Maikling tunog sa lalamunan na [gi] tulad sa 'gintu'; karaniwang diin.",
+    "image_path": "DatasetsKulitan/GI.jpg",
+    "audio_file": "kulitan_gi.mp3"
+  },
+  {
+    "id": "GI_I",
+    "label": "gí/ì",
+    "tts_speak": "Gí",
+    "phonetic_ipa": "giːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('gi' patungong 'giiiiii' [giːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'gi'. Halimbawa sa Kapampangan: 'gísan (ubos)'.",
+    "image_path": "DatasetsKulitan/GI_I.png",
+    "audio_file": "kulitan_gi_i.mp3"
+  },
+  {
+    "id": "GO",
+    "label": "go",
+    "tts_speak": "Gó",
+    "phonetic_ipa": "go",
+    "pronunciation_guide": "Purong bilog na patinig na [go] tulad sa 'gora'; walang dulas.",
+    "image_path": "DatasetsKulitan/GO.png",
+    "audio_file": "kulitan_go.mp3"
+  },
+  {
+    "id": "GU",
+    "label": "gu",
+    "tts_speak": "Gu",
+    "phonetic_ipa": "gu",
+    "pronunciation_guide": "Maikli at bilog na patinig na [gu] tulad sa 'gubat'; payak na bigkas.",
+    "image_path": "DatasetsKulitan/GU.jpg",
+    "audio_file": "kulitan_gu.mp3"
+  },
+  {
+    "id": "GU_U",
+    "label": "gú/ù",
+    "tts_speak": "Gú",
+    "phonetic_ipa": "guːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('gu' patungong 'guuuuuu' [guːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'gu'. Halimbawa sa Kapampangan: 'gúlutung (gulod)'.",
+    "image_path": "DatasetsKulitan/GU_U.png",
+    "audio_file": "kulitan_gu_u.mp3"
+  },
+  {
+    "id": "I",
+    "label": "i",
+    "tts_speak": "I",
+    "phonetic_ipa": "i",
+    "pronunciation_guide": "Maliwanag na patinig sa unahan na [i] tulad sa 'ilug' (ilog); maikli at walang diin.",
+    "image_path": "DatasetsKulitan/I.jpg",
+    "audio_file": "kulitan_i.mp3"
+  },
+  {
+    "id": "KA",
+    "label": "ka",
+    "tts_speak": "Ka",
+    "phonetic_ipa": "ka",
+    "pronunciation_guide": "Matalas na pantig na [ka] tulad sa 'kabyayan' (buhay); hindi hinihipan ng hangin.",
+    "image_path": "DatasetsKulitan/KA.jpg",
+    "audio_file": "kulitan_ka.mp3"
+  },
+  {
+    "id": "KANK",
+    "label": "kank",
+    "tts_speak": "Kank",
+    "phonetic_ipa": "kaŋk",
+    "pronunciation_guide": "Madiing pantig na nagtatapos sa matigas na paghinto [kaŋk] ('-ngk'); buo ang tunog ng 'k' sa dulo.",
+    "image_path": "DatasetsKulitan/KANK.png",
+    "audio_file": "kulitan_kank.mp3"
+  },
+  {
+    "id": "KE",
+    "label": "ke",
+    "tts_speak": "Ke",
+    "phonetic_ipa": "ke",
+    "pronunciation_guide": "Malinis na patinig na [ke] tulad sa 'kelan'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/KE.png",
+    "audio_file": "kulitan_ke.mp3"
+  },
+  {
+    "id": "KI",
+    "label": "ki",
+    "tts_speak": "Ki",
+    "phonetic_ipa": "ki",
+    "pronunciation_guide": "Maikling patinig na [ki] tulad sa 'kilub' (loob); karaniwang bigkas.",
+    "image_path": "DatasetsKulitan/KI.jpg",
+    "audio_file": "kulitan_ki.mp3"
+  },
+  {
+    "id": "KI_I",
+    "label": "kí/ì",
+    "tts_speak": "Kí",
+    "phonetic_ipa": "kiːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('ki' patungong 'kiiiiii' [kiːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'ki'. Halimbawa sa Kapampangan: 'kíling (tagilid)'.",
+    "image_path": "DatasetsKulitan/KI_I.png",
+    "audio_file": "kulitan_ki_i.mp3"
+  },
+  {
+    "id": "KO",
+    "label": "ko",
+    "tts_speak": "Kó",
+    "phonetic_ipa": "ko",
+    "pronunciation_guide": "Purong bilog na patinig na [ko] tulad sa 'koti'; hindi nagiging 'kou'.",
+    "image_path": "DatasetsKulitan/KO.png",
+    "audio_file": "kulitan_ko.mp3"
+  },
+  {
+    "id": "KU",
+    "label": "ku",
+    "tts_speak": "Ku",
+    "phonetic_ipa": "ku",
+    "pronunciation_guide": "Maikling saradong patinig na [ku] tulad sa 'kulitan'; payak na bigkas.",
+    "image_path": "DatasetsKulitan/KU.jpg",
+    "audio_file": "kulitan_ku.mp3"
+  },
+  {
+    "id": "KU_U",
+    "label": "kú/ù",
+    "tts_speak": "Kú",
+    "phonetic_ipa": "kuːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('ku' patungong 'kuuuuuu' [kuːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'ku'. Halimbawa sa Kapampangan: 'kútang (tanong)'.",
+    "image_path": "DatasetsKulitan/KU_U.png",
+    "audio_file": "kulitan_ku_u.mp3"
+  },
+  {
+    "id": "LA",
+    "label": "la",
+    "tts_speak": "La",
+    "phonetic_ipa": "la",
+    "pronunciation_guide": "Magaan na tunog ng dila na [la] tulad sa 'lalam' (ilalim); malinaw ang paghagod.",
+    "image_path": "DatasetsKulitan/LA.jpg",
+    "audio_file": "kulitan_la.mp3"
+  },
+  {
+    "id": "LANG",
+    "label": "lang",
+    "tts_speak": "Lang",
+    "phonetic_ipa": "laŋ",
+    "pronunciation_guide": "Pantig na may dulong tunog-ilong na [laŋ] tulad sa 'langit'; tuloy-tuloy ang ugong.",
+    "image_path": "DatasetsKulitan/LANG.png",
+    "audio_file": "kulitan_lang.mp3"
+  },
+  {
+    "id": "LE",
+    "label": "le",
+    "tts_speak": "Le",
+    "phonetic_ipa": "le",
+    "pronunciation_guide": "Malinis na patinig na [le] tulad sa 'lele' (tabi); purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/LE.png",
+    "audio_file": "kulitan_le.mp3"
+  },
+  {
+    "id": "LI",
+    "label": "li",
+    "tts_speak": "Li",
+    "phonetic_ipa": "li",
+    "pronunciation_guide": "Maikling patinig na [li] tulad sa 'lihim'; karaniwang bigkas.",
+    "image_path": "DatasetsKulitan/LI.jpg",
+    "audio_file": "kulitan_li.mp3"
+  },
+  {
+    "id": "LI_I",
+    "label": "lí/ì",
+    "tts_speak": "Lí",
+    "phonetic_ipa": "liːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('li' patungong 'liiiiii' [liːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'li'. Halimbawa sa Kapampangan: 'lílus (biyaya)'.",
+    "image_path": "DatasetsKulitan/LI_I.png",
+    "audio_file": "kulitan_li_i.mp3"
+  },
+  {
+    "id": "LO",
+    "label": "lo",
+    "tts_speak": "Ló",
+    "phonetic_ipa": "lo",
+    "pronunciation_guide": "Purong bilog na patinig na [lo] tulad sa 'lolo'; walang diptonggo.",
+    "image_path": "DatasetsKulitan/LO.png",
+    "audio_file": "kulitan_lo.mp3"
+  },
+  {
+    "id": "LU",
+    "label": "lu",
+    "tts_speak": "Lu",
+    "phonetic_ipa": "lu",
+    "pronunciation_guide": "Maikling saradong patinig na [lu] tulad sa 'lupa' (mukha/lupa); payak na bigkas.",
+    "image_path": "DatasetsKulitan/LU.jpg",
+    "audio_file": "kulitan_lu.mp3"
+  },
+  {
+    "id": "LU_U",
+    "label": "lú/ù",
+    "tts_speak": "Lú",
+    "phonetic_ipa": "luːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('lu' patungong 'luuuuuu' [luːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'lu'. Halimbawa sa Kapampangan: 'lúluk (upo)'.",
+    "image_path": "DatasetsKulitan/LU_U.png",
+    "audio_file": "kulitan_lu_u.mp3"
+  },
+  {
+    "id": "MA",
+    "label": "ma",
+    "tts_speak": "Ma",
+    "phonetic_ipa": "ma",
+    "pronunciation_guide": "Malumanay na tunog ng dalawang labi na [ma] tulad sa 'maliap'; bukas ang patinig.",
+    "image_path": "DatasetsKulitan/MA.jpg",
+    "audio_file": "kulitan_ma.mp3"
+  },
+  {
+    "id": "MANG",
+    "label": "mang",
+    "tts_speak": "Mang",
+    "phonetic_ipa": "maŋ",
+    "pronunciation_guide": "Pantig na may dulong tunog-ilong na [maŋ] tulad sa 'mangga'; buong nasal na pagtatapos.",
+    "image_path": "DatasetsKulitan/MANG.png",
+    "audio_file": "kulitan_mang.mp3"
+  },
+  {
+    "id": "ME",
+    "label": "me",
+    "tts_speak": "Me",
+    "phonetic_ipa": "me",
+    "pronunciation_guide": "Malinis na patinig na [me] tulad sa 'mestro'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/ME.png",
+    "audio_file": "kulitan_me.mp3"
+  },
+  {
+    "id": "MI",
+    "label": "mi",
+    "tts_speak": "Mi",
+    "phonetic_ipa": "mi",
+    "pronunciation_guide": "Maikling patinig na [mi] tulad sa 'misdan' (pagmasdan); payak na bigkas.",
+    "image_path": "DatasetsKulitan/MI.jpg",
+    "audio_file": "kulitan_mi.mp3"
+  },
+  {
+    "id": "MI_I",
+    "label": "mí/ì",
+    "tts_speak": "Mí",
+    "phonetic_ipa": "miːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('mi' patungong 'miiiiii' [miːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'mi'. Halimbawa sa Kapampangan: 'mína (mina)'.",
+    "image_path": "DatasetsKulitan/MI_I.png",
+    "audio_file": "kulitan_mi_i.mp3"
+  },
+  {
+    "id": "MO",
+    "label": "mo",
+    "tts_speak": "Mó",
+    "phonetic_ipa": "mo",
+    "pronunciation_guide": "Purong bilog na patinig na [mo] tulad sa 'moda'; walang dulas.",
+    "image_path": "DatasetsKulitan/MO.png",
+    "audio_file": "kulitan_mo.mp3"
+  },
+  {
+    "id": "MU",
+    "label": "mu",
+    "tts_speak": "Mu",
+    "phonetic_ipa": "mu",
+    "pronunciation_guide": "Maikling bilog na patinig na [mu] tulad sa 'muran' (mura); payak na bigkas.",
+    "image_path": "DatasetsKulitan/MU.jpg",
+    "audio_file": "kulitan_mu.mp3"
+  },
+  {
+    "id": "MU_U",
+    "label": "mú/ù",
+    "tts_speak": "Mú",
+    "phonetic_ipa": "muːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('mu' patungong 'muuuuuu' [muːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'mu'. Halimbawa sa Kapampangan: 'múla (halaman)'.",
+    "image_path": "DatasetsKulitan/MU_U.png",
+    "audio_file": "kulitan_mu_u.mp3"
+  },
+  {
+    "id": "NA",
+    "label": "na",
+    "tts_speak": "Na",
+    "phonetic_ipa": "na",
+    "pronunciation_guide": "Matalas na tunog ng dila sa ngipin na [na] tulad sa 'napun' (kahapon); bukas ang patinig.",
+    "image_path": "DatasetsKulitan/NA.jpg",
+    "audio_file": "kulitan_na.mp3"
+  },
+  {
+    "id": "NANG",
+    "label": "nang",
+    "tts_speak": "Nang",
+    "phonetic_ipa": "naŋ",
+    "pronunciation_guide": "Pantig na may dulong tunog-ilong na [naŋ] tulad sa 'nang'; malinaw na dulong 'ng'.",
+    "image_path": "DatasetsKulitan/NANG.png",
+    "audio_file": "kulitan_nang.mp3"
+  },
+  {
+    "id": "NE",
+    "label": "ne",
+    "tts_speak": "Ne",
+    "phonetic_ipa": "ne",
+    "pronunciation_guide": "Malinis na patinig na [ne] tulad sa 'neng'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/NE.png",
+    "audio_file": "kulitan_ne.mp3"
+  },
+  {
+    "id": "NGA",
+    "label": "nga",
+    "tts_speak": "Nga",
+    "phonetic_ipa": "ŋa",
+    "pronunciation_guide": "Pang-ngalangalang tunog (velar nasal) na [ŋa] tulad sa 'nganâ'; iisang buong pantig at huwag baybayin.",
+    "image_path": "DatasetsKulitan/NGA.jpg",
+    "audio_file": "kulitan_nga.mp3"
+  },
+  {
+    "id": "NGANG",
+    "label": "ngang",
+    "tts_speak": "Ngang",
+    "phonetic_ipa": "ŋaŋ",
+    "pronunciation_guide": "Dobleng tunog-ilong sa simula at dulo na [ŋaŋ] tulad sa 'ngangá'; parehong gumagamit ng ngalangala.",
+    "image_path": "DatasetsKulitan/NGANG.png",
+    "audio_file": "kulitan_ngang.mp3"
+  },
+  {
+    "id": "NGE",
+    "label": "nge",
+    "tts_speak": "Nge",
+    "phonetic_ipa": "ŋe",
+    "pronunciation_guide": "Pang-ngalangalang tunog (velar nasal) na [ŋe] tulad sa 'ngetnget'; iisang buong pantig at hindi binabaybay na N-G-E.",
+    "image_path": "DatasetsKulitan/NGE.png",
+    "audio_file": "kulitan_nge.mp3"
+  },
+  {
+    "id": "NGI",
+    "label": "ngi",
+    "tts_speak": "Ngi",
+    "phonetic_ipa": "ŋi",
+    "pronunciation_guide": "Pang-ngalangalang tunog (velar nasal) na [ŋi] tulad sa 'ngisi' o 'ngipin'; iisang buong pantig at hindi N-G-I.",
+    "image_path": "DatasetsKulitan/NGI.jpg",
+    "audio_file": "kulitan_ngi.mp3"
+  },
+  {
+    "id": "NGI_I",
+    "label": "ngí/ì",
+    "tts_speak": "Ngí",
+    "phonetic_ipa": "ngiːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('ngi' patungong 'ngiiiiii' [ngiːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'ngi'. Halimbawa sa Kapampangan: 'ngísi (ngiti)'.",
+    "image_path": "DatasetsKulitan/NGI_I.png",
+    "audio_file": "kulitan_ngi_i.mp3"
+  },
+  {
+    "id": "NGO",
+    "label": "ngo",
+    "tts_speak": "Ngó",
+    "phonetic_ipa": "ŋo",
+    "pronunciation_guide": "Pang-ngalangalang tunog (velar nasal) na [ŋo] tulad sa 'nguso'; bilog ang labi at iisang buong pantig.",
+    "image_path": "DatasetsKulitan/NGO.png",
+    "audio_file": "kulitan_ngo.mp3"
+  },
+  {
+    "id": "NGU",
+    "label": "ngu",
+    "tts_speak": "Ngu",
+    "phonetic_ipa": "ŋu",
+    "pronunciation_guide": "Pang-ngalangalang tunog (velar nasal) na [ŋu] tulad sa 'ngurut'; saradong bilog ang labi at iisang buong pantig.",
+    "image_path": "DatasetsKulitan/NGU.jpg",
+    "audio_file": "kulitan_ngu.mp3"
+  },
+  {
+    "id": "NGU_U",
+    "label": "ngú/ù",
+    "tts_speak": "Ngú",
+    "phonetic_ipa": "nguːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('ngu' patungong 'nguuuuuu' [nguːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'ngu'. Halimbawa sa Kapampangan: 'ngúrut (nguso)'.",
+    "image_path": "DatasetsKulitan/NGU_U.png",
+    "audio_file": "kulitan_ngu_u.mp3"
+  },
+  {
+    "id": "NI",
+    "label": "ni",
+    "tts_speak": "Ni",
+    "phonetic_ipa": "ni",
+    "pronunciation_guide": "Maikling patinig na [ni] tulad sa 'ninu' (sino); payak na bigkas.",
+    "image_path": "DatasetsKulitan/NI.jpg",
+    "audio_file": "kulitan_ni.mp3"
+  },
+  {
+    "id": "NI_I",
+    "label": "ní/ì",
+    "tts_speak": "Ní",
+    "phonetic_ipa": "niːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('ni' patungong 'niiiiii' [niːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'ni'. Halimbawa sa Kapampangan: 'nísu (nito)'.",
+    "image_path": "DatasetsKulitan/NI_I.png",
+    "audio_file": "kulitan_ni_i.mp3"
+  },
+  {
+    "id": "NO",
+    "label": "no",
+    "tts_speak": "Nó",
+    "phonetic_ipa": "no",
+    "pronunciation_guide": "Purong bilog na patinig na [no] tulad sa 'no'; walang dulas.",
+    "image_path": "DatasetsKulitan/NO.png",
+    "audio_file": "kulitan_no.mp3"
+  },
+  {
+    "id": "NU",
+    "label": "nu",
+    "tts_speak": "Nu",
+    "phonetic_ipa": "nu",
+    "pronunciation_guide": "Maikling bilog na patinig na [nu] tulad sa 'nukarin' (saan); payak na bigkas.",
+    "image_path": "DatasetsKulitan/NU.jpg",
+    "audio_file": "kulitan_nu.mp3"
+  },
+  {
+    "id": "NU_U",
+    "label": "nú/ù",
+    "tts_speak": "Nú",
+    "phonetic_ipa": "nuːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('nu' patungong 'nuuuuuu' [nuːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'nu'. Halimbawa sa Kapampangan: 'núman (alinman)'.",
+    "image_path": "DatasetsKulitan/NU_U.png",
+    "audio_file": "kulitan_nu_u.mp3"
+  },
+  {
+    "id": "O",
+    "label": "o",
+    "tts_speak": "Ó",
+    "phonetic_ipa": "o",
+    "pronunciation_guide": "Bilog at purong patinig na [o] tulad sa 'ortelano'; malinis na tunog at hindi dumudulas patungong 'ou'.",
+    "image_path": "DatasetsKulitan/O.png",
+    "audio_file": "kulitan_o.mp3"
+  },
+  {
+    "id": "PA",
+    "label": "pa",
+    "tts_speak": "Pa",
+    "phonetic_ipa": "pa",
+    "pronunciation_guide": "Matalas na tunog ng labi na [pa] tulad sa 'parau'; walang buga ng hangin.",
+    "image_path": "DatasetsKulitan/PA.jpg",
+    "audio_file": "kulitan_pa.mp3"
+  },
+  {
+    "id": "PANG",
+    "label": "pang",
+    "tts_speak": "Pang",
+    "phonetic_ipa": "paŋ",
+    "pronunciation_guide": "Pantig na nagtatapos sa tunog-ilong na [paŋ] tulad sa 'panganay'; buo ang ugong.",
+    "image_path": "DatasetsKulitan/PANG.png",
+    "audio_file": "kulitan_pang.mp3"
+  },
+  {
+    "id": "PE",
+    "label": "pe",
+    "tts_speak": "Pe",
+    "phonetic_ipa": "pe",
+    "pronunciation_guide": "Malinis na patinig na [pe] tulad sa 'pera'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/PE.png",
+    "audio_file": "kulitan_pe.mp3"
+  },
+  {
+    "id": "PI",
+    "label": "pi",
+    "tts_speak": "Pi",
+    "phonetic_ipa": "pi",
+    "pronunciation_guide": "Maikling patinig na [pi] tulad sa 'pisan' (pinsan); payak na bigkas.",
+    "image_path": "DatasetsKulitan/PI.jpg",
+    "audio_file": "kulitan_pi.mp3"
+  },
+  {
+    "id": "PI_I",
+    "label": "pí/ì",
+    "tts_speak": "Pí",
+    "phonetic_ipa": "piːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('pi' patungong 'piiiiii' [piːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'pi'. Halimbawa sa Kapampangan: 'pílak (pilak)'.",
+    "image_path": "DatasetsKulitan/PI_I.png",
+    "audio_file": "kulitan_pi_i.mp3"
+  },
+  {
+    "id": "PO",
+    "label": "po",
+    "tts_speak": "Pó",
+    "phonetic_ipa": "po",
+    "pronunciation_guide": "Purong bilog na patinig na [po] tulad sa 'poti'; walang dulas.",
+    "image_path": "DatasetsKulitan/PO.png",
+    "audio_file": "kulitan_po.mp3"
+  },
+  {
+    "id": "PU",
+    "label": "pu",
+    "tts_speak": "Pu",
+    "phonetic_ipa": "pu",
+    "pronunciation_guide": "Maikling bilog na patinig na [pu] tulad sa 'pulayi' (takbo); payak na bigkas.",
+    "image_path": "DatasetsKulitan/PU.jpg",
+    "audio_file": "kulitan_pu.mp3"
+  },
+  {
+    "id": "PU_U",
+    "label": "pú/ù",
+    "tts_speak": "Pú",
+    "phonetic_ipa": "puːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('pu' patungong 'puuuuuu' [puːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'pu'. Halimbawa sa Kapampangan: 'púlung (pulong)'.",
+    "image_path": "DatasetsKulitan/PU_U.png",
+    "audio_file": "kulitan_pu_u.mp3"
+  },
+  {
+    "id": "SA",
+    "label": "sa",
+    "tts_speak": "Sa",
+    "phonetic_ipa": "sa",
+    "pronunciation_guide": "Matalas na tunog-sutsot na [sa] tulad sa 'sabi'; malinaw na paglabas ng hangin.",
+    "image_path": "DatasetsKulitan/SA.jpg",
+    "audio_file": "kulitan_sa.mp3"
+  },
+  {
+    "id": "SANG",
+    "label": "sang",
+    "tts_speak": "Sang",
+    "phonetic_ipa": "saŋ",
+    "pronunciation_guide": "Pantig na nagtatapos sa tunog-ilong na [saŋ] tulad sa 'sangkan'; malinis ang hagod ng 'ng'.",
+    "image_path": "DatasetsKulitan/SANG.png",
+    "audio_file": "kulitan_sang.mp3"
+  },
+  {
+    "id": "SE",
+    "label": "se",
+    "tts_speak": "Se",
+    "phonetic_ipa": "se",
+    "pronunciation_guide": "Malinis na patinig na [se] tulad sa 'sela'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/SE.png",
+    "audio_file": "kulitan_se.mp3"
+  },
+  {
+    "id": "SI",
+    "label": "si",
+    "tts_speak": "Si",
+    "phonetic_ipa": "si",
+    "pronunciation_guide": "Maikling patinig na [si] tulad sa 'sibul'; karaniwang bigkas.",
+    "image_path": "DatasetsKulitan/SI.jpg",
+    "audio_file": "kulitan_si.mp3"
+  },
+  {
+    "id": "SI_I",
+    "label": "sí/ì",
+    "tts_speak": "Sí",
+    "phonetic_ipa": "siːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('si' patungong 'siiiiii' [siːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'si'. Halimbawa sa Kapampangan: 'síkat (sikat)'.",
+    "image_path": "DatasetsKulitan/SI_I.png",
+    "audio_file": "kulitan_si_i.mp3"
+  },
+  {
+    "id": "SO",
+    "label": "so",
+    "tts_speak": "Só",
+    "phonetic_ipa": "so",
+    "pronunciation_guide": "Purong bilog na patinig na [so] tulad sa 'solu'; walang dulas.",
+    "image_path": "DatasetsKulitan/SO.png",
+    "audio_file": "kulitan_so.mp3"
+  },
+  {
+    "id": "SU",
+    "label": "su",
+    "tts_speak": "Su",
+    "phonetic_ipa": "su",
+    "pronunciation_guide": "Maikling saradong patinig na [su] tulad sa 'sulat'; payak na bigkas.",
+    "image_path": "DatasetsKulitan/SU.jpg",
+    "audio_file": "kulitan_su.mp3"
+  },
+  {
+    "id": "SU_U",
+    "label": "sú/ù",
+    "tts_speak": "Sú",
+    "phonetic_ipa": "suːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('su' patungong 'suuuuuu' [suːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'su'. Halimbawa sa Kapampangan: 'súlat (sulat)'.",
+    "image_path": "DatasetsKulitan/SU_U.png",
+    "audio_file": "kulitan_su_u.mp3"
+  },
+  {
+    "id": "TA",
+    "label": "ta",
+    "tts_speak": "Ta",
+    "phonetic_ipa": "ta",
+    "pronunciation_guide": "Matalas na tunog ng dila sa ngipin na [ta] tulad sa 'tau' (tao); hindi hinihipan.",
+    "image_path": "DatasetsKulitan/TA.jpg",
+    "audio_file": "kulitan_ta.mp3"
+  },
+  {
+    "id": "TANG",
+    "label": "tang",
+    "tts_speak": "Tang",
+    "phonetic_ipa": "taŋ",
+    "pronunciation_guide": "Pantig na nagtatapos sa tunog-ilong na [taŋ] tulad sa 'tanggap' o 'tangke'; buo ang ugong sa dulo.",
+    "image_path": "DatasetsKulitan/TANG.png",
+    "audio_file": "kulitan_tang.mp3"
+  },
+  {
+    "id": "TE",
+    "label": "te",
+    "tts_speak": "Te",
+    "phonetic_ipa": "te",
+    "pronunciation_guide": "Malinis na patinig na [te] tulad sa 'tela'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/TE.png",
+    "audio_file": "kulitan_te.mp3"
+  },
+  {
+    "id": "TI",
+    "label": "ti",
+    "tts_speak": "Ti",
+    "phonetic_ipa": "ti",
+    "pronunciation_guide": "Maikling patinig na [ti] tulad sa 'tibuk'; payak na bigkas.",
+    "image_path": "DatasetsKulitan/TI.jpg",
+    "audio_file": "kulitan_ti.mp3"
+  },
+  {
+    "id": "TI_I",
+    "label": "tí/ì",
+    "tts_speak": "Tí",
+    "phonetic_ipa": "tiːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('ti' patungong 'tiiiiii' [tiːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'ti'. Halimbawa sa Kapampangan: 'tíla (tila)'.",
+    "image_path": "DatasetsKulitan/TI_I.png",
+    "audio_file": "kulitan_ti_i.mp3"
+  },
+  {
+    "id": "TO",
+    "label": "to",
+    "tts_speak": "Tó",
+    "phonetic_ipa": "to",
+    "pronunciation_guide": "Purong bilog na patinig na [to] tulad sa 'tó' (narito sila); walang dulas.",
+    "image_path": "DatasetsKulitan/TO.png",
+    "audio_file": "kulitan_to.mp3"
+  },
+  {
+    "id": "TU",
+    "label": "tu",
+    "tts_speak": "Tu",
+    "phonetic_ipa": "tu",
+    "pronunciation_guide": "Maikling saradong patinig na [tu] tulad sa 'tuknang' (tumigil); payak na bigkas.",
+    "image_path": "DatasetsKulitan/TU.jpg",
+    "audio_file": "kulitan_tu.mp3"
+  },
+  {
+    "id": "TU_U",
+    "label": "tú/ù",
+    "tts_speak": "Tú",
+    "phonetic_ipa": "tuːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('tu' patungong 'tuuuuuu' [tuːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'tu'. Halimbawa sa Kapampangan: 'tútu (totoo)'.",
+    "image_path": "DatasetsKulitan/TU_U.png",
+    "audio_file": "kulitan_tu_u.mp3"
+  },
+  {
+    "id": "U",
+    "label": "u",
+    "tts_speak": "U",
+    "phonetic_ipa": "u",
+    "pronunciation_guide": "Sarado at malalim na patinig na [u] tulad sa 'uran' (ulan); nakabilog ang mga labi nang walang tunog 'w'.",
+    "image_path": "DatasetsKulitan/U.jpg",
+    "audio_file": "kulitan_u.mp3"
+  }
+];
+
+    const SLANG_PHONETICS = {
+      "A": "Ah", "E": "Eh", "I": "Ee", "O": "Oh", "U": "Oo",
+      "BA": "Bah", "BE": "Beh", "BI": "Bee", "BO": "Boh", "BU": "Boo",
+      "DA": "Dah", "DE": "Deh", "DI": "Dee", "DO": "Doh", "DU": "Doo",
+      "GA": "Gah", "GE": "Geh", "GI": "Gee", "GO": "Goh", "GU": "Goo",
+      "KA": "Kah", "KE": "Keh", "KI": "Kee", "KO": "Koh", "KU": "Koo",
+      "LA": "Lah", "LE": "Leh", "LI": "Lee", "LO": "Loh", "LU": "Loo",
+      "MA": "Mah", "ME": "Meh", "MI": "Mee", "MO": "Moh", "MU": "Moo",
+      "NA": "Nah", "NE": "Neh", "NI": "Nee", "NO": "Noh", "NU": "Noo",
+      "NGA": "Nga", "NGE": "Ngeh", "NGI": "Ngee", "NGO": "Ngoh", "NGU": "Ngoo",
+      "PA": "Pah", "PE": "Peh", "PI": "Pee", "PO": "Poh", "PU": "Poo",
+      "SA": "Sah", "SE": "Seh", "SI": "See", "SO": "Soh", "SU": "Soo",
+      "TA": "Tah", "TE": "Teh", "TI": "Tee", "TO": "Toh", "TU": "Too",
+      "BI_I": "Bee-ee", "DI_I": "Dee-ee", "GI_I": "Gee-ee", "KI_I": "Kee-ee",
+      "LI_I": "Lee-ee", "MI_I": "Mee-ee", "NI_I": "Nee-ee", "NGI_I": "Ngee-ee",
+      "PI_I": "Pee-ee", "SI_I": "See-ee", "TI_I": "Tee-ee",
+      "BU_U": "Boo-oo", "DU_U": "Doo-oo", "GU_U": "Goo-oo", "KU_U": "Koo-oo",
+      "LU_U": "Loo-oo", "MU_U": "Moo-oo", "NU_U": "Noo-oo", "NGU_U": "Ngoo-oo",
+      "PU_U": "Poo-oo", "SU_U": "Soo-oo", "TU_U": "Too-oo",
+      "BANG": "Bahng", "DANG": "Dahng", "GANG": "Gahng", "KANK": "Kahngk",
+      "LANG": "Lahng", "MANG": "Mahng", "NANG": "Nahng", "NGANG": "Ngahng",
+      "PANG": "Pahng", "SANG": "Sahng", "TANG": "Tahng"
+    };
+
+    let currentAccentMode = "native";
+    let activeCardSpeeds = {};
+    let masterGainValue = 1.0;
+    let audioCtx = null;
+    let masterGainNode = null;
+    let decodedBufferCache = {};
+    let isVisualizerActive = false;
+    let vizEnergy = 0.5;
+    let currentAudioObj = null;
+    let repeatTimer = null;
+    let availableVoices = [];
+
+    const cardsGrid = document.getElementById("cardsGrid");
+    const searchInput = document.getElementById("searchInput");
+    const nowPlaying = document.getElementById("nowPlaying");
+    const nowPlayingText = document.getElementById("nowPlayingText");
+    const vizStatus = document.getElementById("vizStatus");
+    const canvas = document.getElementById("visualizerCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Audio Context unlocker
+    function initAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+          masterGainNode = audioCtx.createGain();
+          masterGainNode.gain.value = masterGainValue;
+          masterGainNode.connect(audioCtx.destination);
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    // Visualizer loop
+    function startVisualizerLoop() {
+      const bars = 48;
+      const spectrum = new Float32Array(bars);
+
+      function draw() {
+        requestAnimationFrame(draw);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const barWidth = canvas.width / bars;
+
+        for (let i = 0; i < bars; i++) {
+          if (isVisualizerActive) {
+            const target = (Math.sin(Date.now() * 0.02 + i * 0.35) * 0.5 + 0.5) * vizEnergy * canvas.height * (0.4 + Math.random() * 0.6);
+            spectrum[i] = spectrum[i] * 0.35 + target * 0.65;
+          } else {
+            spectrum[i] *= 0.82;
+          }
+
+          const h = Math.max(3, spectrum[i]);
+          const grad = ctx.createLinearGradient(0, canvas.height, 0, 0);
+          grad.addColorStop(0, "#f59e0b");
+          grad.addColorStop(0.5, "#06b6d4");
+          grad.addColorStop(1, "#10b981");
+
+          ctx.fillStyle = grad;
+          ctx.fillRect(i * barWidth, canvas.height - h, barWidth - 2, h);
+        }
+      }
+      draw();
+    }
+    startVisualizerLoop();
+
+    // Voice Loader
+    function loadVoices() {
+      if (!("speechSynthesis" in window)) return;
+      availableVoices = window.speechSynthesis.getVoices();
+    }
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+      loadVoices();
+    }
+
+    // Helper: Base64 to ArrayBuffer
+    function base64ToArrayBuffer(base64) {
+      const raw = base64.includes(',') ? base64.split(',')[1] : base64;
+      const binary = window.atob(raw);
+      const len = binary.length;
+      const bytes = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binary.charCodeAt(i);
+      }
+      return bytes.buffer;
+    }
+
+    // Helper: Get Base64 sound for item
+    function getAudioDataUri(item) {
+      if (window.KULITAN_AUDIO_BASE64 && window.KULITAN_AUDIO_BASE64[item.audio_file]) {
+        return window.KULITAN_AUDIO_BASE64[item.audio_file];
+      }
+      return './DatasetsKulitan/audio/' + item.audio_file;
+    }
+
+    // Play Native Audio using Web Audio API buffer when possible (with fallback to Audio element)
+    async function playNativeSoundBuffer(item, speed = 1.0) {
+      initAudioContext();
+      const dataUri = getAudioDataUri(item);
+
+      if (audioCtx && dataUri.startsWith('data:audio')) {
+        try {
+          if (!decodedBufferCache[item.audio_file]) {
+            const arrayBuf = base64ToArrayBuffer(dataUri);
+            decodedBufferCache[item.audio_file] = await audioCtx.decodeAudioData(arrayBuf);
+          }
+          const buffer = decodedBufferCache[item.audio_file];
+          const source = audioCtx.createBufferSource();
+          source.buffer = buffer;
+          source.playbackRate.value = speed;
+          source.connect(masterGainNode);
+          source.start(0);
+
+          return new Promise(resolve => {
+            source.onended = () => resolve();
+          });
+        } catch (e) {
+          console.warn("Hindi ma-decode sa Web Audio, lilipat sa HTML5 Audio:", e);
+        }
+      }
+
+      // HTML5 Audio Fallback
+      return new Promise(resolve => {
+        if (currentAudioObj) {
+          currentAudioObj.pause();
+          currentAudioObj = null;
+        }
+        const audio = new Audio();
+        currentAudioObj = audio;
+        audio.src = dataUri;
+        audio.volume = Math.min(1.0, masterGainValue);
+        audio.playbackRate = speed;
+
+        audio.onended = () => {
+          currentAudioObj = null;
+          resolve();
+        };
+        audio.onerror = () => {
+          console.warn("May aberya sa audio para sa " + item.id);
+          resolve();
+        };
+        const p = audio.play();
+        if (p !== undefined) {
+          p.catch(err => {
+            console.warn("Hindi nai-play ang audio:", err);
+            resolve();
+          });
+        }
+      });
+    }
+
+    // Main Native Audio Handler
+    async function playNativeAudio(item, cardEl) {
+      stopAllAudio();
+      clearPlayingStatus();
+      if (cardEl) cardEl.classList.add("playing-native");
+
+      const speed = activeCardSpeeds[item.id] || 1.0;
+      nowPlaying.style.display = "flex";
+      nowPlayingText.innerHTML = `🔊 Pinatutugtog: <strong>${item.tts_speak}</strong> [${item.phonetic_ipa}] • <em>${item.audio_file}</em> (${speed}x)`;
+      vizStatus.textContent = `KATUTUBONG AUDIO: ${item.id}`;
+      isVisualizerActive = true;
+      vizEnergy = 0.85;
+
+      await playNativeSoundBuffer(item, speed);
+
+      isVisualizerActive = false;
+      clearPlayingStatus();
+      nowPlaying.style.display = "none";
+      vizStatus.textContent = "NAKAHANDA / WALANG TUMUTUNOG";
+    }
+
+    // Practice Repeat 3x (Shadowing)
+    async function playRepeat3x(item, cardEl) {
+      stopAllAudio();
+      clearPlayingStatus();
+      if (cardEl) cardEl.classList.add("playing-repeat");
+
+      const speed = activeCardSpeeds[item.id] || 1.0;
+      vizStatus.textContent = `PAGSASANAY (3x): ${item.id}`;
+
+      for (let cycle = 1; cycle <= 3; cycle++) {
+        nowPlaying.style.display = "flex";
+        nowPlayingText.innerHTML = `🔁 Pagsasanay (Ika-<strong>${cycle}/3</strong>): Sabayan at bigkasin ang "<strong>${item.tts_speak}</strong>" [${item.phonetic_ipa}]`;
+        isVisualizerActive = true;
+        vizEnergy = 0.9;
+
+        await playNativeSoundBuffer(item, speed);
+        isVisualizerActive = false;
+
+        if (cycle < 3) {
+          await new Promise(r => { repeatTimer = setTimeout(r, 650); });
+        }
+      }
+
+      clearPlayingStatus();
+      nowPlaying.style.display = "none";
+      vizStatus.textContent = "NAKAHANDA / WALANG TUMUTUNOG";
+    }
+
+    // TTS Fallback / Comparison
+    function playTTS(item, mode, cardEl) {
+      stopAllAudio();
+      clearPlayingStatus();
+
+      const speed = activeCardSpeeds[item.id] || 1.0;
+      const isSlang = (mode === "slang");
+      if (cardEl) cardEl.classList.add(isSlang ? "playing-slang" : "playing-native");
+
+      const text = isSlang ? (SLANG_PHONETICS[item.id] || item.tts_speak) : item.tts_speak;
+      const utter = new SpeechSynthesisUtterance(text);
+
+      utter.pitch = item.phonetic_ipa.includes("˥") ? 1.35 : 1.0;
+      utter.rate = speed;
+      isVisualizerActive = true;
+      vizEnergy = 0.65;
+
+      if (isSlang) {
+        const enVoice = availableVoices.find(v => v.lang.includes("en-US") || v.lang.includes("en"));
+        if (enVoice) utter.voice = enVoice;
+        nowPlaying.style.display = "flex";
+        nowPlayingText.innerHTML = `🇺🇸 Pagkukumpara sa Slang (${speed}x): <strong>${text}</strong> [Pakinggan ang kaibahan]`;
+        vizStatus.textContent = `SLANG TTS: ${item.id}`;
+      } else {
+        const filVoice = availableVoices.find(v => v.lang.includes("fil") || v.lang.includes("tl") || v.lang.includes("es") || v.lang.includes("id"));
+        if (filVoice) utter.voice = filVoice;
+        nowPlaying.style.display = "flex";
+        nowPlayingText.innerHTML = `🇵🇭 Tagalog TTS (${speed}x): <strong>${item.tts_speak}</strong> [${item.phonetic_ipa}]`;
+        vizStatus.textContent = `TAGALOG TTS: ${item.id}`;
+      }
+
+      utter.onend = () => {
+        isVisualizerActive = false;
+        clearPlayingStatus();
+        nowPlaying.style.display = "none";
+        vizStatus.textContent = "NAKAHANDA / WALANG TUMUTUNOG";
+      };
+      utter.onerror = utter.onend;
+      window.speechSynthesis.speak(utter);
+    }
+
+    function stopAllAudio() {
+      if (repeatTimer) {
+        clearTimeout(repeatTimer);
+        repeatTimer = null;
+      }
+      if (currentAudioObj) {
+        currentAudioObj.pause();
+        currentAudioObj = null;
+      }
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+    }
+
+    function clearPlayingStatus() {
+      document.querySelectorAll(".card").forEach(c => {
+        c.classList.remove("playing-native", "playing-repeat", "playing-slang");
+      });
+      document.querySelectorAll(".vowel-pill-card").forEach(v => {
+        v.classList.remove("active-vowel");
+      });
+    }
+
+    // Pagsasanay sa Patinig: A-E-I-O-U Sequential Autoplay
+    let isVowelPlayingLoop = false;
+    async function playAllVowelsSequence() {
+      if (isVowelPlayingLoop) {
+        isVowelPlayingLoop = false;
+        stopAllAudio();
+        document.getElementById("btnPlayAllVowels").innerHTML = '<span>▶ Sunod-sunod na Basahin (A ➔ E ➔ I ➔ O ➔ U)</span>';
+        return;
+      }
+
+      isVowelPlayingLoop = true;
+      initAudioContext();
+      document.getElementById("btnPlayAllVowels").innerHTML = '<span>⏹ Ihinto ang Pagsasanay</span>';
+
+      const vowelList = ["A", "E", "I", "O", "U"];
+      for (let i = 0; i < vowelList.length; i++) {
+        if (!isVowelPlayingLoop) break;
+        const vId = vowelList[i];
+        const vItem = KULITAN_DATA.find(x => x.id === vId);
+        if (!vItem) continue;
+
+        clearPlayingStatus();
+        const pillCard = document.querySelector(`.vowel-pill-card[data-vowel="${vId}"]`);
+        if (pillCard) pillCard.classList.add("active-vowel");
+
+        nowPlaying.style.display = "flex";
+        nowPlayingText.innerHTML = `📖 Pagbasa ng Patinig (<strong>${i+1}/5</strong>): Titik <strong>${vId}</strong> [tunog: ${vItem.phonetic_ipa}]`;
+        vizStatus.textContent = `PATINIG: ${vId}`;
+        isVisualizerActive = true;
+        vizEnergy = 0.9;
+
+        await playNativeSoundBuffer(vItem, 1.0);
+        isVisualizerActive = false;
+
+        if (i < vowelList.length - 1 && isVowelPlayingLoop) {
+          await new Promise(r => { repeatTimer = setTimeout(r, 750); });
+        }
+      }
+
+      clearPlayingStatus();
+      nowPlaying.style.display = "none";
+      vizStatus.textContent = "NAKAHANDA / WALANG TUMUTUNOG";
+      isVowelPlayingLoop = false;
+      document.getElementById("btnPlayAllVowels").innerHTML = '<span>▶ Sunod-sunod na Basahin (A ➔ E ➔ I ➔ O ➔ U)</span>';
+    }
+
+    document.getElementById("btnPlayAllVowels").addEventListener("click", playAllVowelsSequence);
+
+    // Click sa indibidwal na Vowel card sa deck
+    document.querySelectorAll(".vowel-pill-card").forEach(p => {
+      p.addEventListener("click", () => {
+        const vId = p.getAttribute("data-vowel");
+        const item = KULITAN_DATA.find(x => x.id === vId);
+        if (item) {
+          clearPlayingStatus();
+          p.classList.add("active-vowel");
+          playNativeAudio(item, null);
+        }
+      });
+    });
+
+    // Subukan ang Tunog sa Itaas
+    document.getElementById("btnTestSound").addEventListener("click", () => {
+      initAudioContext();
+      const biItem = KULITAN_DATA.find(x => x.id === "BI_I") || KULITAN_DATA[0];
+      playNativeAudio(biItem, null);
+    });
+
+    // Piliin ang Lakas ng Tunog
+    document.querySelectorAll(".vol-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".vol-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        masterGainValue = parseFloat(btn.getAttribute("data-gain"));
+        if (masterGainNode) {
+          masterGainNode.gain.value = masterGainValue;
+        }
+      });
+    });
+
+    // Paglalatag ng mga Kard
+    function renderCards(filterCat = "all", search = "") {
+      cardsGrid.innerHTML = "";
+      const q = search.trim().toLowerCase();
+
+      const filtered = KULITAN_DATA.filter(item => {
+        const isVowel = ["A", "E", "I", "O", "U"].includes(item.id);
+        const isAccented = item.id.includes("_") || item.label.includes("/");
+        const isCoda = item.id.endsWith("NG") || item.id.endsWith("NK");
+        const isBase = !isVowel && !isAccented && !isCoda;
+
+        if (filterCat === "vowel" && !isVowel) return false;
+        if (filterCat === "accented" && !isAccented) return false;
+        if (filterCat === "coda" && !isCoda) return false;
+        if (filterCat === "base" && !isBase) return false;
+
+        if (q) {
+          return item.id.toLowerCase().includes(q) ||
+                 item.label.toLowerCase().includes(q) ||
+                 item.tts_speak.toLowerCase().includes(q) ||
+                 item.phonetic_ipa.toLowerCase().includes(q) ||
+                 (item.pronunciation_guide && item.pronunciation_guide.toLowerCase().includes(q)) ||
+                 item.audio_file.toLowerCase().includes(q);
+        }
+        return true;
+      });
+
+      filtered.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "card";
+        const isSlash = item.label.includes('/') || item.id.includes('_');
+        const isHigh = item.phonetic_ipa.includes("˥");
+        const currentSpeed = activeCardSpeeds[item.id] || 1.0;
+
+        let badgeHtml = '<span class="card-badge">Karaniwang Pantig</span>';
+        if (isSlash) {
+          badgeHtml = '<span class="card-badge high-pitch">Mahabang Diin ˥</span>';
+        } else if (item.id.startsWith("NG")) {
+          badgeHtml = '<span class="card-badge" style="background:rgba(6,182,212,0.18);color:#22d3ee;border:1px solid rgba(6,182,212,0.35);font-weight:700;">Tunog-Ilong [ŋ]</span>';
+        }
+
+        card.innerHTML = `
+          <div class="card-top">
+            <span class="card-id">${item.id}</span>
+            ${badgeHtml}
+          </div>
+          <div class="image-preview">
+            <img src="${item.image_path}" alt="${item.id}" loading="lazy">
+          </div>
+          <div class="card-details">
+            <div class="info-group">
+              <div class="info-label">Tatak ng Titik</div>
+              <div class="info-val">${item.label}</div>
+            </div>
+            <div class="info-group">
+              <div class="info-label">Wastong Bigkas</div>
+              <div class="info-val">${item.tts_speak}</div>
+            </div>
+            <div class="info-group" style="grid-column: span 2;">
+              <div class="info-label">Ponetiko at Tono (IPA)</div>
+              <div class="info-val ipa">[${item.phonetic_ipa}]</div>
+            </div>
+          </div>
+          <div class="guide-box">
+            📖 <strong>Gabay sa Pagbasa:</strong> ${item.pronunciation_guide || "Wastong katutubong bigkas Kapampangan."}
+          </div>
+          <div class="card-footer">
+            <div class="speed-toggle-group">
+              <button class="speed-btn ${currentSpeed === 0.75 ? "active" : ""}" data-speed="0.75" title="Mabagal (0.75x) para masundan ang hugis ng bibig at posisyon ng dila">🐢 0.75x Mabagal</button>
+              <button class="speed-btn ${currentSpeed === 1.0 ? "active" : ""}" data-speed="1.0" title="Karaniwang Bilis (1.0x)">⚡ 1.0x Karaniwan</button>
+            </div>
+            <div class="audio-actions">
+              <button class="action-btn btn-native" title="Pakinggan ang Tunay na Bigkas Kapampangan">
+                <span class="play-icon">▶ 🇵🇭 Tunay na Bigkas</span>
+                <div class="wave-anim">
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                </div>
+              </button>
+              <button class="action-btn btn-repeat" title="Ulitin nang 3 beses (Pagsasanay / Shadowing)">
+                <span class="play-icon">🔁 3x Ensayo</span>
+                <div class="wave-anim">
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                </div>
+              </button>
+              <button class="action-btn btn-slang" title="Ikumpara sa Karaniwang Bigkas ng Ingles o Slang">
+                <span class="play-icon">🇺🇸 Slang</span>
+                <div class="wave-anim">
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                </div>
+              </button>
+            </div>
+          </div>
+        `;
+
+        // Pag-click sa buong kard
+        card.addEventListener("click", () => {
+          if (currentAccentMode === "native") playNativeAudio(item, card);
+          else if (currentAccentMode === "fil") playTTS(item, "fil", card);
+          else playTTS(item, "slang", card);
+        });
+
+        // Mga pindutan ng bilis
+        card.querySelectorAll(".speed-btn").forEach(sBtn => {
+          sBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const spd = parseFloat(sBtn.getAttribute("data-speed"));
+            activeCardSpeeds[item.id] = spd;
+            card.querySelectorAll(".speed-btn").forEach(b => b.classList.remove("active"));
+            sBtn.classList.add("active");
+          });
+        });
+
+        // Dedicated Native button
+        const btnNative = card.querySelector(".btn-native");
+        btnNative.addEventListener("click", (e) => {
+          e.stopPropagation();
+          playNativeAudio(item, card);
+        });
+
+        // Dedicated Repeat 3x button
+        const btnRepeat = card.querySelector(".btn-repeat");
+        btnRepeat.addEventListener("click", (e) => {
+          e.stopPropagation();
+          playRepeat3x(item, card);
+        });
+
+        // Dedicated Slang button
+        const btnSlang = card.querySelector(".btn-slang");
+        btnSlang.addEventListener("click", (e) => {
+          e.stopPropagation();
+          playTTS(item, "slang", card);
+        });
+
+        cardsGrid.appendChild(card);
+      });
+    }
+
+    // Switcher bar buttons
+    document.querySelectorAll(".accent-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".accent-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentAccentMode = btn.getAttribute("data-mode");
+      });
+    });
+
+    let activeCat = "all";
+    document.querySelectorAll(".pill-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".pill-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeCat = btn.getAttribute("data-cat");
+        renderCards(activeCat, searchInput.value);
+      });
+    });
+
+    searchInput.addEventListener("input", () => {
+      renderCards(activeCat, searchInput.value);
+    });
+
+    renderCards();
+  </script>
+</body>
+</html>

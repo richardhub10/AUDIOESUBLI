@@ -1,0 +1,839 @@
+[
+  {
+    "id": "A",
+    "label": "a",
+    "tts_speak": "A",
+    "phonetic_ipa": "a",
+    "pronunciation_guide": "Bukas at malinaw na patinig na [a] tulad sa 'ama' o 'asul'; hindi paimpit o parang sa Ingles na 'apple'.",
+    "image_path": "DatasetsKulitan/A.jpg",
+    "audio_file": "kulitan_a.mp3"
+  },
+  {
+    "id": "BA",
+    "label": "ba",
+    "tts_speak": "Ba",
+    "phonetic_ipa": "ba",
+    "pronunciation_guide": "Matalas at maikling pantig na [ba] tulad sa salitang 'bale' (bahay); hindi binubugahan ng hangin.",
+    "image_path": "DatasetsKulitan/BA.jpg",
+    "audio_file": "kulitan_ba.mp3"
+  },
+  {
+    "id": "BANG",
+    "label": "bang",
+    "tts_speak": "Bang",
+    "phonetic_ipa": "baŋ",
+    "pronunciation_guide": "Pantig na nagtatapos sa tunog-ilong na [baŋ] tulad sa 'bangka'; buo ang ugong ng 'ng' sa dulo.",
+    "image_path": "DatasetsKulitan/BANG.png",
+    "audio_file": "kulitan_bang.mp3"
+  },
+  {
+    "id": "BE",
+    "label": "be",
+    "tts_speak": "Be",
+    "phonetic_ipa": "be",
+    "pronunciation_guide": "Malinis na gitnang patinig na [be] tulad sa 'bengit'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/BE.png",
+    "audio_file": "kulitan_be.mp3"
+  },
+  {
+    "id": "BI",
+    "label": "bi",
+    "tts_speak": "Bi",
+    "phonetic_ipa": "bi",
+    "pronunciation_guide": "Maikling pantay na patinig na [bi] tulad sa 'bilang'; payak na bigkas.",
+    "image_path": "DatasetsKulitan/BI.jpg",
+    "audio_file": "kulitan_bi.mp3"
+  },
+  {
+    "id": "BI_I",
+    "label": "bí/ì",
+    "tts_speak": "Bí",
+    "phonetic_ipa": "biːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('bi' patungong 'biiiiii' [biːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'bi'. Halimbawa sa Kapampangan: 'bíik (biik)'.",
+    "image_path": "DatasetsKulitan/BI_I.png",
+    "audio_file": "kulitan_bi_i.mp3"
+  },
+  {
+    "id": "BO",
+    "label": "bo",
+    "tts_speak": "Bó",
+    "phonetic_ipa": "bo",
+    "pronunciation_guide": "Purong bilog na patinig na [bo] tulad sa 'boti'; walang diptonggong dulas.",
+    "image_path": "DatasetsKulitan/BO.png",
+    "audio_file": "kulitan_bo.mp3"
+  },
+  {
+    "id": "BU",
+    "label": "bu",
+    "tts_speak": "Bu",
+    "phonetic_ipa": "bu",
+    "pronunciation_guide": "Maikli at bilog na patinig na [bu] tulad sa 'bukas'; payak at walang diin.",
+    "image_path": "DatasetsKulitan/BU.jpg",
+    "audio_file": "kulitan_bu.mp3"
+  },
+  {
+    "id": "BU_U",
+    "label": "bú/ù",
+    "tts_speak": "Bú",
+    "phonetic_ipa": "buːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('bu' patungong 'buuuuuu' [buːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'bu'. Halimbawa sa Kapampangan: 'búlug (toro)'.",
+    "image_path": "DatasetsKulitan/BU_U.png",
+    "audio_file": "kulitan_bu_u.mp3"
+  },
+  {
+    "id": "DA",
+    "label": "da",
+    "tts_speak": "Da",
+    "phonetic_ipa": "da",
+    "pronunciation_guide": "Matalas na pantig na [da] tulad sa 'dalan' (daan); nakalapat ang dila sa likod ng ngipin.",
+    "image_path": "DatasetsKulitan/DA.jpg",
+    "audio_file": "kulitan_da.mp3"
+  },
+  {
+    "id": "DANG",
+    "label": "dang",
+    "tts_speak": "Dang",
+    "phonetic_ipa": "daŋ",
+    "pronunciation_guide": "Pantig na nagtatapos sa tunog-ilong na [daŋ] tulad sa 'dangkal'; malinaw ang dulong 'ng'.",
+    "image_path": "DatasetsKulitan/DANG.png",
+    "audio_file": "kulitan_dang.mp3"
+  },
+  {
+    "id": "DE",
+    "label": "de",
+    "tts_speak": "De",
+    "phonetic_ipa": "de",
+    "pronunciation_guide": "Malinis na gitnang patinig na [de] tulad sa 'delikadu'; maikling tunog.",
+    "image_path": "DatasetsKulitan/DE.png",
+    "audio_file": "kulitan_de.mp3"
+  },
+  {
+    "id": "DI",
+    "label": "di",
+    "tts_speak": "Di",
+    "phonetic_ipa": "di",
+    "pronunciation_guide": "Maikling patinig na [di] tulad sa 'dila'; payak at walang diin.",
+    "image_path": "DatasetsKulitan/DI.jpg",
+    "audio_file": "kulitan_di.mp3"
+  },
+  {
+    "id": "DI_I",
+    "label": "dí/ì",
+    "tts_speak": "Dí",
+    "phonetic_ipa": "diːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('di' patungong 'diiiiii' [diːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'di'. Halimbawa sa Kapampangan: 'díla (dila)'.",
+    "image_path": "DatasetsKulitan/DI_I.png",
+    "audio_file": "kulitan_di_i.mp3"
+  },
+  {
+    "id": "DO",
+    "label": "do",
+    "tts_speak": "Dó",
+    "phonetic_ipa": "do",
+    "pronunciation_guide": "Purong bilog na patinig na [do] tulad sa 'do'; hindi nagiging 'dou'.",
+    "image_path": "DatasetsKulitan/DO.png",
+    "audio_file": "kulitan_do.mp3"
+  },
+  {
+    "id": "DU",
+    "label": "du",
+    "tts_speak": "Du",
+    "phonetic_ipa": "du",
+    "pronunciation_guide": "Maikli at saradong patinig na [du] tulad sa 'durut' (ikot); payak na bigkas.",
+    "image_path": "DatasetsKulitan/DU.jpg",
+    "audio_file": "kulitan_du.mp3"
+  },
+  {
+    "id": "DU_U",
+    "label": "dú/ù",
+    "tts_speak": "Dú",
+    "phonetic_ipa": "duːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('du' patungong 'duuuuuu' [duːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'du'. Halimbawa sa Kapampangan: 'dúkut (dukot)'.",
+    "image_path": "DatasetsKulitan/DU_U.png",
+    "audio_file": "kulitan_du_u.mp3"
+  },
+  {
+    "id": "E",
+    "label": "e",
+    "tts_speak": "E",
+    "phonetic_ipa": "e",
+    "pronunciation_guide": "Matalas at malinis na patinig na [e] tulad sa 'ebon' (ibon/itlog); hindi nagiging tunog 'i'.",
+    "image_path": "DatasetsKulitan/E.png",
+    "audio_file": "kulitan_e.mp3"
+  },
+  {
+    "id": "GA",
+    "label": "ga",
+    "tts_speak": "Ga",
+    "phonetic_ipa": "ga",
+    "pronunciation_guide": "Madiing tunog sa lalamunan na [ga] tulad sa 'gale' (galaw); walang buga ng hangin.",
+    "image_path": "DatasetsKulitan/GA.jpg",
+    "audio_file": "kulitan_ga.mp3"
+  },
+  {
+    "id": "GANG",
+    "label": "gang",
+    "tts_speak": "Gang",
+    "phonetic_ipa": "gaŋ",
+    "pronunciation_guide": "Pantig na nagtatapos sa tunog-ilong na [gaŋ] tulad sa 'gangsa'; malalim ang ugong sa lalamunan.",
+    "image_path": "DatasetsKulitan/GANG.png",
+    "audio_file": "kulitan_gang.mp3"
+  },
+  {
+    "id": "GE",
+    "label": "ge",
+    "tts_speak": "Ge",
+    "phonetic_ipa": "ge",
+    "pronunciation_guide": "Malinis na gitnang patinig na [ge] tulad sa 'geleran'; purong 'e'.",
+    "image_path": "DatasetsKulitan/GE.png",
+    "audio_file": "kulitan_ge.mp3"
+  },
+  {
+    "id": "GI",
+    "label": "gi",
+    "tts_speak": "Gi",
+    "phonetic_ipa": "gi",
+    "pronunciation_guide": "Maikling tunog sa lalamunan na [gi] tulad sa 'gintu'; karaniwang diin.",
+    "image_path": "DatasetsKulitan/GI.jpg",
+    "audio_file": "kulitan_gi.mp3"
+  },
+  {
+    "id": "GI_I",
+    "label": "gí/ì",
+    "tts_speak": "Gí",
+    "phonetic_ipa": "giːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('gi' patungong 'giiiiii' [giːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'gi'. Halimbawa sa Kapampangan: 'gísan (ubos)'.",
+    "image_path": "DatasetsKulitan/GI_I.png",
+    "audio_file": "kulitan_gi_i.mp3"
+  },
+  {
+    "id": "GO",
+    "label": "go",
+    "tts_speak": "Gó",
+    "phonetic_ipa": "go",
+    "pronunciation_guide": "Purong bilog na patinig na [go] tulad sa 'gora'; walang dulas.",
+    "image_path": "DatasetsKulitan/GO.png",
+    "audio_file": "kulitan_go.mp3"
+  },
+  {
+    "id": "GU",
+    "label": "gu",
+    "tts_speak": "Gu",
+    "phonetic_ipa": "gu",
+    "pronunciation_guide": "Maikli at bilog na patinig na [gu] tulad sa 'gubat'; payak na bigkas.",
+    "image_path": "DatasetsKulitan/GU.jpg",
+    "audio_file": "kulitan_gu.mp3"
+  },
+  {
+    "id": "GU_U",
+    "label": "gú/ù",
+    "tts_speak": "Gú",
+    "phonetic_ipa": "guːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('gu' patungong 'guuuuuu' [guːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'gu'. Halimbawa sa Kapampangan: 'gúlutung (gulod)'.",
+    "image_path": "DatasetsKulitan/GU_U.png",
+    "audio_file": "kulitan_gu_u.mp3"
+  },
+  {
+    "id": "I",
+    "label": "i",
+    "tts_speak": "I",
+    "phonetic_ipa": "i",
+    "pronunciation_guide": "Maliwanag na patinig sa unahan na [i] tulad sa 'ilug' (ilog); maikli at walang diin.",
+    "image_path": "DatasetsKulitan/I.jpg",
+    "audio_file": "kulitan_i.mp3"
+  },
+  {
+    "id": "KA",
+    "label": "ka",
+    "tts_speak": "Ka",
+    "phonetic_ipa": "ka",
+    "pronunciation_guide": "Matalas na pantig na [ka] tulad sa 'kabyayan' (buhay); hindi hinihipan ng hangin.",
+    "image_path": "DatasetsKulitan/KA.jpg",
+    "audio_file": "kulitan_ka.mp3"
+  },
+  {
+    "id": "KANK",
+    "label": "kank",
+    "tts_speak": "Kank",
+    "phonetic_ipa": "kaŋk",
+    "pronunciation_guide": "Madiing pantig na nagtatapos sa matigas na paghinto [kaŋk] ('-ngk'); buo ang tunog ng 'k' sa dulo.",
+    "image_path": "DatasetsKulitan/KANK.png",
+    "audio_file": "kulitan_kank.mp3"
+  },
+  {
+    "id": "KE",
+    "label": "ke",
+    "tts_speak": "Ke",
+    "phonetic_ipa": "ke",
+    "pronunciation_guide": "Malinis na patinig na [ke] tulad sa 'kelan'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/KE.png",
+    "audio_file": "kulitan_ke.mp3"
+  },
+  {
+    "id": "KI",
+    "label": "ki",
+    "tts_speak": "Ki",
+    "phonetic_ipa": "ki",
+    "pronunciation_guide": "Maikling patinig na [ki] tulad sa 'kilub' (loob); karaniwang bigkas.",
+    "image_path": "DatasetsKulitan/KI.jpg",
+    "audio_file": "kulitan_ki.mp3"
+  },
+  {
+    "id": "KI_I",
+    "label": "kí/ì",
+    "tts_speak": "Kí",
+    "phonetic_ipa": "kiːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('ki' patungong 'kiiiiii' [kiːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'ki'. Halimbawa sa Kapampangan: 'kíling (tagilid)'.",
+    "image_path": "DatasetsKulitan/KI_I.png",
+    "audio_file": "kulitan_ki_i.mp3"
+  },
+  {
+    "id": "KO",
+    "label": "ko",
+    "tts_speak": "Kó",
+    "phonetic_ipa": "ko",
+    "pronunciation_guide": "Purong bilog na patinig na [ko] tulad sa 'koti'; hindi nagiging 'kou'.",
+    "image_path": "DatasetsKulitan/KO.png",
+    "audio_file": "kulitan_ko.mp3"
+  },
+  {
+    "id": "KU",
+    "label": "ku",
+    "tts_speak": "Ku",
+    "phonetic_ipa": "ku",
+    "pronunciation_guide": "Maikling saradong patinig na [ku] tulad sa 'kulitan'; payak na bigkas.",
+    "image_path": "DatasetsKulitan/KU.jpg",
+    "audio_file": "kulitan_ku.mp3"
+  },
+  {
+    "id": "KU_U",
+    "label": "kú/ù",
+    "tts_speak": "Kú",
+    "phonetic_ipa": "kuːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('ku' patungong 'kuuuuuu' [kuːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'ku'. Halimbawa sa Kapampangan: 'kútang (tanong)'.",
+    "image_path": "DatasetsKulitan/KU_U.png",
+    "audio_file": "kulitan_ku_u.mp3"
+  },
+  {
+    "id": "LA",
+    "label": "la",
+    "tts_speak": "La",
+    "phonetic_ipa": "la",
+    "pronunciation_guide": "Magaan na tunog ng dila na [la] tulad sa 'lalam' (ilalim); malinaw ang paghagod.",
+    "image_path": "DatasetsKulitan/LA.jpg",
+    "audio_file": "kulitan_la.mp3"
+  },
+  {
+    "id": "LANG",
+    "label": "lang",
+    "tts_speak": "Lang",
+    "phonetic_ipa": "laŋ",
+    "pronunciation_guide": "Pantig na may dulong tunog-ilong na [laŋ] tulad sa 'langit'; tuloy-tuloy ang ugong.",
+    "image_path": "DatasetsKulitan/LANG.png",
+    "audio_file": "kulitan_lang.mp3"
+  },
+  {
+    "id": "LE",
+    "label": "le",
+    "tts_speak": "Le",
+    "phonetic_ipa": "le",
+    "pronunciation_guide": "Malinis na patinig na [le] tulad sa 'lele' (tabi); purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/LE.png",
+    "audio_file": "kulitan_le.mp3"
+  },
+  {
+    "id": "LI",
+    "label": "li",
+    "tts_speak": "Li",
+    "phonetic_ipa": "li",
+    "pronunciation_guide": "Maikling patinig na [li] tulad sa 'lihim'; karaniwang bigkas.",
+    "image_path": "DatasetsKulitan/LI.jpg",
+    "audio_file": "kulitan_li.mp3"
+  },
+  {
+    "id": "LI_I",
+    "label": "lí/ì",
+    "tts_speak": "Lí",
+    "phonetic_ipa": "liːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('li' patungong 'liiiiii' [liːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'li'. Halimbawa sa Kapampangan: 'lílus (biyaya)'.",
+    "image_path": "DatasetsKulitan/LI_I.png",
+    "audio_file": "kulitan_li_i.mp3"
+  },
+  {
+    "id": "LO",
+    "label": "lo",
+    "tts_speak": "Ló",
+    "phonetic_ipa": "lo",
+    "pronunciation_guide": "Purong bilog na patinig na [lo] tulad sa 'lolo'; walang diptonggo.",
+    "image_path": "DatasetsKulitan/LO.png",
+    "audio_file": "kulitan_lo.mp3"
+  },
+  {
+    "id": "LU",
+    "label": "lu",
+    "tts_speak": "Lu",
+    "phonetic_ipa": "lu",
+    "pronunciation_guide": "Maikling saradong patinig na [lu] tulad sa 'lupa' (mukha/lupa); payak na bigkas.",
+    "image_path": "DatasetsKulitan/LU.jpg",
+    "audio_file": "kulitan_lu.mp3"
+  },
+  {
+    "id": "LU_U",
+    "label": "lú/ù",
+    "tts_speak": "Lú",
+    "phonetic_ipa": "luːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('lu' patungong 'luuuuuu' [luːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'lu'. Halimbawa sa Kapampangan: 'lúluk (upo)'.",
+    "image_path": "DatasetsKulitan/LU_U.png",
+    "audio_file": "kulitan_lu_u.mp3"
+  },
+  {
+    "id": "MA",
+    "label": "ma",
+    "tts_speak": "Ma",
+    "phonetic_ipa": "ma",
+    "pronunciation_guide": "Malumanay na tunog ng dalawang labi na [ma] tulad sa 'maliap'; bukas ang patinig.",
+    "image_path": "DatasetsKulitan/MA.jpg",
+    "audio_file": "kulitan_ma.mp3"
+  },
+  {
+    "id": "MANG",
+    "label": "mang",
+    "tts_speak": "Mang",
+    "phonetic_ipa": "maŋ",
+    "pronunciation_guide": "Pantig na may dulong tunog-ilong na [maŋ] tulad sa 'mangga'; buong nasal na pagtatapos.",
+    "image_path": "DatasetsKulitan/MANG.png",
+    "audio_file": "kulitan_mang.mp3"
+  },
+  {
+    "id": "ME",
+    "label": "me",
+    "tts_speak": "Me",
+    "phonetic_ipa": "me",
+    "pronunciation_guide": "Malinis na patinig na [me] tulad sa 'mestro'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/ME.png",
+    "audio_file": "kulitan_me.mp3"
+  },
+  {
+    "id": "MI",
+    "label": "mi",
+    "tts_speak": "Mi",
+    "phonetic_ipa": "mi",
+    "pronunciation_guide": "Maikling patinig na [mi] tulad sa 'misdan' (pagmasdan); payak na bigkas.",
+    "image_path": "DatasetsKulitan/MI.jpg",
+    "audio_file": "kulitan_mi.mp3"
+  },
+  {
+    "id": "MI_I",
+    "label": "mí/ì",
+    "tts_speak": "Mí",
+    "phonetic_ipa": "miːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('mi' patungong 'miiiiii' [miːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'mi'. Halimbawa sa Kapampangan: 'mína (mina)'.",
+    "image_path": "DatasetsKulitan/MI_I.png",
+    "audio_file": "kulitan_mi_i.mp3"
+  },
+  {
+    "id": "MO",
+    "label": "mo",
+    "tts_speak": "Mó",
+    "phonetic_ipa": "mo",
+    "pronunciation_guide": "Purong bilog na patinig na [mo] tulad sa 'moda'; walang dulas.",
+    "image_path": "DatasetsKulitan/MO.png",
+    "audio_file": "kulitan_mo.mp3"
+  },
+  {
+    "id": "MU",
+    "label": "mu",
+    "tts_speak": "Mu",
+    "phonetic_ipa": "mu",
+    "pronunciation_guide": "Maikling bilog na patinig na [mu] tulad sa 'muran' (mura); payak na bigkas.",
+    "image_path": "DatasetsKulitan/MU.jpg",
+    "audio_file": "kulitan_mu.mp3"
+  },
+  {
+    "id": "MU_U",
+    "label": "mú/ù",
+    "tts_speak": "Mú",
+    "phonetic_ipa": "muːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('mu' patungong 'muuuuuu' [muːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'mu'. Halimbawa sa Kapampangan: 'múla (halaman)'.",
+    "image_path": "DatasetsKulitan/MU_U.png",
+    "audio_file": "kulitan_mu_u.mp3"
+  },
+  {
+    "id": "NA",
+    "label": "na",
+    "tts_speak": "Na",
+    "phonetic_ipa": "na",
+    "pronunciation_guide": "Matalas na tunog ng dila sa ngipin na [na] tulad sa 'napun' (kahapon); bukas ang patinig.",
+    "image_path": "DatasetsKulitan/NA.jpg",
+    "audio_file": "kulitan_na.mp3"
+  },
+  {
+    "id": "NANG",
+    "label": "nang",
+    "tts_speak": "Nang",
+    "phonetic_ipa": "naŋ",
+    "pronunciation_guide": "Pantig na may dulong tunog-ilong na [naŋ] tulad sa 'nang'; malinaw na dulong 'ng'.",
+    "image_path": "DatasetsKulitan/NANG.png",
+    "audio_file": "kulitan_nang.mp3"
+  },
+  {
+    "id": "NE",
+    "label": "ne",
+    "tts_speak": "Ne",
+    "phonetic_ipa": "ne",
+    "pronunciation_guide": "Malinis na patinig na [ne] tulad sa 'neng'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/NE.png",
+    "audio_file": "kulitan_ne.mp3"
+  },
+  {
+    "id": "NGA",
+    "label": "nga",
+    "tts_speak": "Nga",
+    "phonetic_ipa": "ŋa",
+    "pronunciation_guide": "Pang-ngalangalang tunog (velar nasal) na [ŋa] tulad sa 'nganâ'; iisang buong pantig at huwag baybayin.",
+    "image_path": "DatasetsKulitan/NGA.jpg",
+    "audio_file": "kulitan_nga.mp3"
+  },
+  {
+    "id": "NGANG",
+    "label": "ngang",
+    "tts_speak": "Ngang",
+    "phonetic_ipa": "ŋaŋ",
+    "pronunciation_guide": "Dobleng tunog-ilong sa simula at dulo na [ŋaŋ] tulad sa 'ngangá'; parehong gumagamit ng ngalangala.",
+    "image_path": "DatasetsKulitan/NGANG.png",
+    "audio_file": "kulitan_ngang.mp3"
+  },
+  {
+    "id": "NGE",
+    "label": "nge",
+    "tts_speak": "Nge",
+    "phonetic_ipa": "ŋe",
+    "pronunciation_guide": "Pang-ngalangalang tunog (velar nasal) na [ŋe] tulad sa 'ngetnget'; iisang buong pantig at hindi binabaybay na N-G-E.",
+    "image_path": "DatasetsKulitan/NGE.png",
+    "audio_file": "kulitan_nge.mp3"
+  },
+  {
+    "id": "NGI",
+    "label": "ngi",
+    "tts_speak": "Ngi",
+    "phonetic_ipa": "ŋi",
+    "pronunciation_guide": "Pang-ngalangalang tunog (velar nasal) na [ŋi] tulad sa 'ngisi' o 'ngipin'; iisang buong pantig at hindi N-G-I.",
+    "image_path": "DatasetsKulitan/NGI.jpg",
+    "audio_file": "kulitan_ngi.mp3"
+  },
+  {
+    "id": "NGI_I",
+    "label": "ngí/ì",
+    "tts_speak": "Ngí",
+    "phonetic_ipa": "ngiːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('ngi' patungong 'ngiiiiii' [ngiːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'ngi'. Halimbawa sa Kapampangan: 'ngísi (ngiti)'.",
+    "image_path": "DatasetsKulitan/NGI_I.png",
+    "audio_file": "kulitan_ngi_i.mp3"
+  },
+  {
+    "id": "NGO",
+    "label": "ngo",
+    "tts_speak": "Ngó",
+    "phonetic_ipa": "ŋo",
+    "pronunciation_guide": "Pang-ngalangalang tunog (velar nasal) na [ŋo] tulad sa 'nguso'; bilog ang labi at iisang buong pantig.",
+    "image_path": "DatasetsKulitan/NGO.png",
+    "audio_file": "kulitan_ngo.mp3"
+  },
+  {
+    "id": "NGU",
+    "label": "ngu",
+    "tts_speak": "Ngu",
+    "phonetic_ipa": "ŋu",
+    "pronunciation_guide": "Pang-ngalangalang tunog (velar nasal) na [ŋu] tulad sa 'ngurut'; saradong bilog ang labi at iisang buong pantig.",
+    "image_path": "DatasetsKulitan/NGU.jpg",
+    "audio_file": "kulitan_ngu.mp3"
+  },
+  {
+    "id": "NGU_U",
+    "label": "ngú/ù",
+    "tts_speak": "Ngú",
+    "phonetic_ipa": "nguːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('ngu' patungong 'nguuuuuu' [nguːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'ngu'. Halimbawa sa Kapampangan: 'ngúrut (nguso)'.",
+    "image_path": "DatasetsKulitan/NGU_U.png",
+    "audio_file": "kulitan_ngu_u.mp3"
+  },
+  {
+    "id": "NI",
+    "label": "ni",
+    "tts_speak": "Ni",
+    "phonetic_ipa": "ni",
+    "pronunciation_guide": "Maikling patinig na [ni] tulad sa 'ninu' (sino); payak na bigkas.",
+    "image_path": "DatasetsKulitan/NI.jpg",
+    "audio_file": "kulitan_ni.mp3"
+  },
+  {
+    "id": "NI_I",
+    "label": "ní/ì",
+    "tts_speak": "Ní",
+    "phonetic_ipa": "niːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('ni' patungong 'niiiiii' [niːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'ni'. Halimbawa sa Kapampangan: 'nísu (nito)'.",
+    "image_path": "DatasetsKulitan/NI_I.png",
+    "audio_file": "kulitan_ni_i.mp3"
+  },
+  {
+    "id": "NO",
+    "label": "no",
+    "tts_speak": "Nó",
+    "phonetic_ipa": "no",
+    "pronunciation_guide": "Purong bilog na patinig na [no] tulad sa 'no'; walang dulas.",
+    "image_path": "DatasetsKulitan/NO.png",
+    "audio_file": "kulitan_no.mp3"
+  },
+  {
+    "id": "NU",
+    "label": "nu",
+    "tts_speak": "Nu",
+    "phonetic_ipa": "nu",
+    "pronunciation_guide": "Maikling bilog na patinig na [nu] tulad sa 'nukarin' (saan); payak na bigkas.",
+    "image_path": "DatasetsKulitan/NU.jpg",
+    "audio_file": "kulitan_nu.mp3"
+  },
+  {
+    "id": "NU_U",
+    "label": "nú/ù",
+    "tts_speak": "Nú",
+    "phonetic_ipa": "nuːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('nu' patungong 'nuuuuuu' [nuːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'nu'. Halimbawa sa Kapampangan: 'núman (alinman)'.",
+    "image_path": "DatasetsKulitan/NU_U.png",
+    "audio_file": "kulitan_nu_u.mp3"
+  },
+  {
+    "id": "O",
+    "label": "o",
+    "tts_speak": "Ó",
+    "phonetic_ipa": "o",
+    "pronunciation_guide": "Bilog at purong patinig na [o] tulad sa 'ortelano'; malinis na tunog at hindi dumudulas patungong 'ou'.",
+    "image_path": "DatasetsKulitan/O.png",
+    "audio_file": "kulitan_o.mp3"
+  },
+  {
+    "id": "PA",
+    "label": "pa",
+    "tts_speak": "Pa",
+    "phonetic_ipa": "pa",
+    "pronunciation_guide": "Matalas na tunog ng labi na [pa] tulad sa 'parau'; walang buga ng hangin.",
+    "image_path": "DatasetsKulitan/PA.jpg",
+    "audio_file": "kulitan_pa.mp3"
+  },
+  {
+    "id": "PANG",
+    "label": "pang",
+    "tts_speak": "Pang",
+    "phonetic_ipa": "paŋ",
+    "pronunciation_guide": "Pantig na nagtatapos sa tunog-ilong na [paŋ] tulad sa 'panganay'; buo ang ugong.",
+    "image_path": "DatasetsKulitan/PANG.png",
+    "audio_file": "kulitan_pang.mp3"
+  },
+  {
+    "id": "PE",
+    "label": "pe",
+    "tts_speak": "Pe",
+    "phonetic_ipa": "pe",
+    "pronunciation_guide": "Malinis na patinig na [pe] tulad sa 'pera'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/PE.png",
+    "audio_file": "kulitan_pe.mp3"
+  },
+  {
+    "id": "PI",
+    "label": "pi",
+    "tts_speak": "Pi",
+    "phonetic_ipa": "pi",
+    "pronunciation_guide": "Maikling patinig na [pi] tulad sa 'pisan' (pinsan); payak na bigkas.",
+    "image_path": "DatasetsKulitan/PI.jpg",
+    "audio_file": "kulitan_pi.mp3"
+  },
+  {
+    "id": "PI_I",
+    "label": "pí/ì",
+    "tts_speak": "Pí",
+    "phonetic_ipa": "piːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('pi' patungong 'piiiiii' [piːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'pi'. Halimbawa sa Kapampangan: 'pílak (pilak)'.",
+    "image_path": "DatasetsKulitan/PI_I.png",
+    "audio_file": "kulitan_pi_i.mp3"
+  },
+  {
+    "id": "PO",
+    "label": "po",
+    "tts_speak": "Pó",
+    "phonetic_ipa": "po",
+    "pronunciation_guide": "Purong bilog na patinig na [po] tulad sa 'poti'; walang dulas.",
+    "image_path": "DatasetsKulitan/PO.png",
+    "audio_file": "kulitan_po.mp3"
+  },
+  {
+    "id": "PU",
+    "label": "pu",
+    "tts_speak": "Pu",
+    "phonetic_ipa": "pu",
+    "pronunciation_guide": "Maikling bilog na patinig na [pu] tulad sa 'pulayi' (takbo); payak na bigkas.",
+    "image_path": "DatasetsKulitan/PU.jpg",
+    "audio_file": "kulitan_pu.mp3"
+  },
+  {
+    "id": "PU_U",
+    "label": "pú/ù",
+    "tts_speak": "Pú",
+    "phonetic_ipa": "puːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('pu' patungong 'puuuuuu' [puːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'pu'. Halimbawa sa Kapampangan: 'púlung (pulong)'.",
+    "image_path": "DatasetsKulitan/PU_U.png",
+    "audio_file": "kulitan_pu_u.mp3"
+  },
+  {
+    "id": "SA",
+    "label": "sa",
+    "tts_speak": "Sa",
+    "phonetic_ipa": "sa",
+    "pronunciation_guide": "Matalas na tunog-sutsot na [sa] tulad sa 'sabi'; malinaw na paglabas ng hangin.",
+    "image_path": "DatasetsKulitan/SA.jpg",
+    "audio_file": "kulitan_sa.mp3"
+  },
+  {
+    "id": "SANG",
+    "label": "sang",
+    "tts_speak": "Sang",
+    "phonetic_ipa": "saŋ",
+    "pronunciation_guide": "Pantig na nagtatapos sa tunog-ilong na [saŋ] tulad sa 'sangkan'; malinis ang hagod ng 'ng'.",
+    "image_path": "DatasetsKulitan/SANG.png",
+    "audio_file": "kulitan_sang.mp3"
+  },
+  {
+    "id": "SE",
+    "label": "se",
+    "tts_speak": "Se",
+    "phonetic_ipa": "se",
+    "pronunciation_guide": "Malinis na patinig na [se] tulad sa 'sela'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/SE.png",
+    "audio_file": "kulitan_se.mp3"
+  },
+  {
+    "id": "SI",
+    "label": "si",
+    "tts_speak": "Si",
+    "phonetic_ipa": "si",
+    "pronunciation_guide": "Maikling patinig na [si] tulad sa 'sibul'; karaniwang bigkas.",
+    "image_path": "DatasetsKulitan/SI.jpg",
+    "audio_file": "kulitan_si.mp3"
+  },
+  {
+    "id": "SI_I",
+    "label": "sí/ì",
+    "tts_speak": "Sí",
+    "phonetic_ipa": "siːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('si' patungong 'siiiiii' [siːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'si'. Halimbawa sa Kapampangan: 'síkat (sikat)'.",
+    "image_path": "DatasetsKulitan/SI_I.png",
+    "audio_file": "kulitan_si_i.mp3"
+  },
+  {
+    "id": "SO",
+    "label": "so",
+    "tts_speak": "Só",
+    "phonetic_ipa": "so",
+    "pronunciation_guide": "Purong bilog na patinig na [so] tulad sa 'solu'; walang dulas.",
+    "image_path": "DatasetsKulitan/SO.png",
+    "audio_file": "kulitan_so.mp3"
+  },
+  {
+    "id": "SU",
+    "label": "su",
+    "tts_speak": "Su",
+    "phonetic_ipa": "su",
+    "pronunciation_guide": "Maikling saradong patinig na [su] tulad sa 'sulat'; payak na bigkas.",
+    "image_path": "DatasetsKulitan/SU.jpg",
+    "audio_file": "kulitan_su.mp3"
+  },
+  {
+    "id": "SU_U",
+    "label": "sú/ù",
+    "tts_speak": "Sú",
+    "phonetic_ipa": "suːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('su' patungong 'suuuuuu' [suːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'su'. Halimbawa sa Kapampangan: 'súlat (sulat)'.",
+    "image_path": "DatasetsKulitan/SU_U.png",
+    "audio_file": "kulitan_su_u.mp3"
+  },
+  {
+    "id": "TA",
+    "label": "ta",
+    "tts_speak": "Ta",
+    "phonetic_ipa": "ta",
+    "pronunciation_guide": "Matalas na tunog ng dila sa ngipin na [ta] tulad sa 'tau' (tao); hindi hinihipan.",
+    "image_path": "DatasetsKulitan/TA.jpg",
+    "audio_file": "kulitan_ta.mp3"
+  },
+  {
+    "id": "TANG",
+    "label": "tang",
+    "tts_speak": "Tang",
+    "phonetic_ipa": "taŋ",
+    "pronunciation_guide": "Pantig na nagtatapos sa tunog-ilong na [taŋ] tulad sa 'tanggap' o 'tangke'; buo ang ugong sa dulo.",
+    "image_path": "DatasetsKulitan/TANG.png",
+    "audio_file": "kulitan_tang.mp3"
+  },
+  {
+    "id": "TE",
+    "label": "te",
+    "tts_speak": "Te",
+    "phonetic_ipa": "te",
+    "pronunciation_guide": "Malinis na patinig na [te] tulad sa 'tela'; purong tunog 'e'.",
+    "image_path": "DatasetsKulitan/TE.png",
+    "audio_file": "kulitan_te.mp3"
+  },
+  {
+    "id": "TI",
+    "label": "ti",
+    "tts_speak": "Ti",
+    "phonetic_ipa": "ti",
+    "pronunciation_guide": "Maikling patinig na [ti] tulad sa 'tibuk'; payak na bigkas.",
+    "image_path": "DatasetsKulitan/TI.jpg",
+    "audio_file": "kulitan_ti.mp3"
+  },
+  {
+    "id": "TI_I",
+    "label": "tí/ì",
+    "tts_speak": "Tí",
+    "phonetic_ipa": "tiːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('ti' patungong 'tiiiiii' [tiːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'ti'. Halimbawa sa Kapampangan: 'tíla (tila)'.",
+    "image_path": "DatasetsKulitan/TI_I.png",
+    "audio_file": "kulitan_ti_i.mp3"
+  },
+  {
+    "id": "TO",
+    "label": "to",
+    "tts_speak": "Tó",
+    "phonetic_ipa": "to",
+    "pronunciation_guide": "Purong bilog na patinig na [to] tulad sa 'tó' (narito sila); walang dulas.",
+    "image_path": "DatasetsKulitan/TO.png",
+    "audio_file": "kulitan_to.mp3"
+  },
+  {
+    "id": "TU",
+    "label": "tu",
+    "tts_speak": "Tu",
+    "phonetic_ipa": "tu",
+    "pronunciation_guide": "Maikling saradong patinig na [tu] tulad sa 'tuknang' (tumigil); payak na bigkas.",
+    "image_path": "DatasetsKulitan/TU.jpg",
+    "audio_file": "kulitan_tu.mp3"
+  },
+  {
+    "id": "TU_U",
+    "label": "tú/ù",
+    "tts_speak": "Tú",
+    "phonetic_ipa": "tuːː˥",
+    "pronunciation_guide": "Pahaba at banat na bigkas ('tu' patungong 'tuuuuuu' [tuːː˥]) na may mataas na tono o diin. Mas matagal pakinggan kaysa sa payak na 'tu'. Halimbawa sa Kapampangan: 'tútu (totoo)'.",
+    "image_path": "DatasetsKulitan/TU_U.png",
+    "audio_file": "kulitan_tu_u.mp3"
+  },
+  {
+    "id": "U",
+    "label": "u",
+    "tts_speak": "U",
+    "phonetic_ipa": "u",
+    "pronunciation_guide": "Sarado at malalim na patinig na [u] tulad sa 'uran' (ulan); nakabilog ang mga labi nang walang tunog 'w'.",
+    "image_path": "DatasetsKulitan/U.jpg",
+    "audio_file": "kulitan_u.mp3"
+  }
+]
